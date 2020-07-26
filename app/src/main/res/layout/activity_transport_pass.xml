@@ -1,0 +1,1018 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TransportPassActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:visibility="visible"
+            android:layout_marginTop="10dp"
+            app:cardElevation="20dp"
+            app:cardCornerRadius="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:fontFamily="@font/seguisb"
+                    android:id="@+id/instruction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kindly read instructions below"
+                    android:textAllCaps="true"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:background="#000"/>
+                <View
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#969393"/>
+
+                <TextView
+                    android:fontFamily="@font/seguisb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:padding="5dp"
+                    android:text="1. The interstate medical permit for one way or two way travel to exit and/or re-enter the state will be issued depending on sole discretion of the Approving Authority."/>
+
+                <TextView
+                    android:padding="5dp"
+                    android:fontFamily="@font/seguisb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:text="2. Strict actions shall be taken against those found misusing the e-pass."/>
+
+                <TextView
+                    android:padding="5dp"
+                    android:fontFamily="@font/seguisb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:text="3. The pass holders are requested to carry the Driving License compulsorily."/>
+
+                <TextView
+                    android:padding="5dp"
+                    android:fontFamily="@font/seguisb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:text="4. The state authority is liable to cancel the pass anytime."/>
+
+                <TextView
+                    android:padding="5dp"
+                    android:fontFamily="@font/seguisb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:text="5. People on Government/Medical/Press Media should carry their respective ID Card."/>
+
+                <TextView
+                    android:padding="5dp"
+                    android:fontFamily="@font/seguisb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:text="6. For interstate permits may kindly apply to respective District Magistrates of the district you are residing."/>
+
+                <TextView
+                    android:padding="5dp"
+                    android:fontFamily="@font/seguisb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:text="7. The vehicle e-Pass is only for intrastate/interstate travel."/>
+
+                <TextView
+                    android:padding="5dp"
+                    android:fontFamily="@font/seguisb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:text="8. This Vehicle e-Pass is non-transferable."/>
+
+                <TextView
+                    android:padding="5dp"
+                    android:fontFamily="@font/seguisb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:text="9. A maximum of five people will be allowed in a single vehicle e-Pass and all are required to carry their respective ID Cards. The number of people travelling maybe reduced by sole discretion of the Approving Authority."/>
+
+                <TextView
+                    android:padding="5dp"
+                    android:fontFamily="@font/seguisb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:text="10. DOCUMENT PROOF(S) IS/ARE REQUIRED TO BE UPLOADED ACCORDING TO THE PURPOSE YOU ARE CHOOSING FOR THE VEHICLE E-PASS. A MINIMUM OF ONE DOCUMENT PROOF OR A MAXIMUM OF FIVE DOCUMENT PROOFS MAY BE UPLOADED FOR VERIFICATION. MAX SIZE FOR EACH DOCUMENT IS 5 MB and FILE TYPES ACCEPTED ARE JPG, JPEG, PNG and PDF."/>
+
+                <TextView
+                    android:padding="5dp"
+                    android:fontFamily="@font/seguisb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:text="11. CLICK ON (INSTRUCTIONS TO APPLY FOR VEHICLE E-PASS) ON THE TOP RIGHT HAND SIDE CORNER FOR DETAILED INSTRUCTIONS WITH ILLUSTRATIONS."/>
+
+                <TextView
+                    android:padding="5dp"
+                    android:fontFamily="@font/seguisb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:text="12. IT'S MANDATORY TO HAVE INSTALLED AAROGYA SETU APP ON YOUR SMARTPHONE FOR ELIGIBILITY TO APPLY FOR VEHICLE e-PASS."/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="20dp"
+            app:cardElevation="20dp"
+            app:cardCornerRadius="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:fontFamily="@font/seguisb"
+                    android:id="@+id/apc_part"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="APPLICATION PROCESSING LOCATION (Select the Office and District)"
+                    android:textAllCaps="true"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="#07DDF8"/>
+                <View
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#969393"/>
+
+                <TextView
+                    android:fontFamily="@font/seguisb"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="District*"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"/>
+
+                <Spinner
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/spinner_district"
+                    android:layout_width="350dp"
+                    android:layout_height="40dp"/>
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:visibility="visible"
+            android:layout_marginTop="20dp"
+            app:cardElevation="20dp"
+            app:cardCornerRadius="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:fontFamily="@font/seguisb"
+                    android:id="@+id/ad_part"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="APPLICATION DETAILS"
+                    android:textAllCaps="true"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="#07DDF8"/>
+                <View
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#969393"/>
+
+                <TextView
+                    android:fontFamily="@font/seguisb"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Applicant's Full name*"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"/>
+
+                <EditText
+                    android:hint="Applicant Name"
+                    android:textColorHint="#000"
+                    android:textColor="#000"
+                    android:id="@+id/appl_name"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:inputType="text"
+                    android:background="@drawable/round_border_dup"/>
+
+                <TextView
+                    android:fontFamily="@font/seguisb"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mobile Number*"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"/>
+
+                <EditText
+                    android:hint="Mobile number"
+                    android:textColorHint="#000"
+                    android:id="@+id/appl_phone"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:layout_marginStart="10dp"
+                    android:inputType="phone"
+                    android:background="@drawable/round_border_dup"/>
+
+                <TextView
+                    android:fontFamily="@font/seguisb"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Purpose for Pass*"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"/>
+
+                <Spinner
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/spinner_pass_purpose"
+                    android:layout_width="350dp"
+                    android:layout_height="40dp"/>
+
+                <TextView
+                    android:fontFamily="@font/seguisb"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Please specify purpose in details in max 300 characters *"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"/>
+
+                <EditText
+                    android:hint="i.e reason of using transportation pass"
+                    android:textColorHint="#000"
+                    android:id="@+id/appl_purpose_explain"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:textColor="#000"
+                    android:layout_marginStart="10dp"
+                    android:inputType="textMultiLine"
+                    android:background="@drawable/round_border_dup"/>
+
+                <TextView
+                    android:fontFamily="@font/seguisb"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Vechile No. *"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"/>
+
+                <EditText
+                    android:hint="Vechile Number"
+                    android:textColorHint="#000"
+                    android:id="@+id/appl_vechile_number"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:layout_marginStart="10dp"
+                    android:inputType="text"
+                    android:background="@drawable/round_border_dup"/>
+
+                <TextView
+                    android:fontFamily="@font/seguisb"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Email Address*"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"/>
+
+                <EditText
+                    android:hint="Email Address"
+                    android:textColorHint="#000"
+                    android:id="@+id/appl_email_addr"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:layout_marginStart="10dp"
+                    android:inputType="textEmailAddress"
+                    android:background="@drawable/round_border_dup"/>
+
+                <TextView
+                    android:fontFamily="@font/seguisb"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Driving License No.*"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"/>
+
+                <EditText
+                    android:hint="Driving License Number"
+                    android:textColorHint="#000"
+                    android:id="@+id/appl_driving_license_number"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:layout_marginStart="10dp"
+                    android:inputType="text"
+                    android:background="@drawable/round_border_dup"/>
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:visibility="visible"
+            android:layout_marginTop="20dp"
+            app:cardElevation="20dp"
+            app:cardCornerRadius="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:fontFamily="@font/seguisb"
+                    android:id="@+id/td_part"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Travel Details"
+                    android:textAllCaps="true"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="#07DDF8"/>
+                <View
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#969393"/>
+
+                <TextView
+                    android:fontFamily="@font/seguisb"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="From date *"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"/>
+
+                <TextView
+                    android:id="@+id/appl_from_date"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Click here to select the date"/>
+
+                <TextView
+                    android:fontFamily="@font/seguisb"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="To date *"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"/>
+
+                <TextView
+                    android:id="@+id/appl_to_date"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Click here to select the date"/>
+
+                <TextView
+                    android:fontFamily="@font/seguisb"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Enter the route details below "
+                    android:textStyle="bold"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:fontFamily="@font/seguisb"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Source *"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"/>
+
+                <EditText
+                    android:hint="Source of the journey"
+                    android:textColorHint="#000"
+                    android:textColor="#000"
+                    android:id="@+id/appl_source"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:inputType="text"
+                    android:background="@drawable/round_border_dup"/>
+
+                <TextView
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/seguisb"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Destination *"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"/>
+
+                <EditText
+                    android:hint="Destination of the journey"
+                    android:textColorHint="#000"
+                    android:textColor="#000"
+                    android:id="@+id/appl_destination"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:inputType="text"
+                    android:background="@drawable/round_border_dup"/>
+
+                <TextView
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/seguisb"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="e-Pass is required for *"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"/>
+
+                <RadioGroup
+                    android:id="@+id/radiogroup_transport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:onClick="way_choice"
+                        android:id="@+id/radio_one_way"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:text="One Way"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:onClick="way_choice"
+                        android:id="@+id/radio_two_way"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Two Way"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </RadioGroup>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:visibility="visible"
+            android:layout_marginTop="20dp"
+            app:cardElevation="20dp"
+            app:cardCornerRadius="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:fontFamily="@font/seguisb"
+                    android:id="@+id/pt_part"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Passengers Details(Max 5 persons allowed)"
+                    android:textAllCaps="true"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="#07DDF8"/>
+                <View
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#969393"/>
+
+                <TextView
+                    android:fontFamily="@font/seguisb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:padding="5dp"
+                    android:text="1. MAX FIVE PEOPLE ALLOWED"/>
+
+                <TextView
+                    android:fontFamily="@font/seguisb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:padding="5dp"
+                    android:text="2. PLEASE ENTER NAME OF PEOPLE STARTING FROM TOP PRIORITY AND SO ON"/>
+
+                <TextView
+                    android:fontFamily="@font/seguisb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:padding="5dp"
+                    android:text="3. PLEASE ENTER NAME OF AT LEAST ONE PERSON WHICH CAN BE SAME AS THE APPLICANT"/>
+
+                <TextView
+                    android:fontFamily="@font/seguisb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:padding="5dp"
+                    android:text="4. THE NO. OF PEOPLE TRAVELLING MAY BE REDUCED DEPENDING ON THE SOLE DISCRETION OF THE APPROVING AUTHORITY."/>
+
+                <TextView
+                    android:fontFamily="@font/seguisb"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Select the no. of people travelling *"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"/>
+
+                <Spinner
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/spinner_person_travelling"
+                    android:layout_width="350dp"
+                    android:layout_height="40dp"/>
+
+                <TextView
+                    android:id="@+id/txt_person_one"
+                    android:visibility="gone"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/seguisb"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Full name of the first person *"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"/>
+
+                <EditText
+                    android:visibility="gone"
+                    android:id="@+id/appl_person_one"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:inputType="text"
+                    android:background="@drawable/round_border_dup"/>
+
+                <TextView
+                    android:id="@+id/txt_person_two"
+                    android:visibility="gone"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/seguisb"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Full name of the second person *"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"/>
+
+                <EditText
+                    android:visibility="gone"
+                    android:id="@+id/appl_person_two"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:inputType="text"
+                    android:background="@drawable/round_border_dup"/>
+
+                <TextView
+                    android:id="@+id/txt_person_three"
+                    android:visibility="gone"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/seguisb"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Full name of the third person *"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"/>
+
+                <EditText
+                    android:visibility="gone"
+                    android:id="@+id/appl_person_three"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:inputType="text"
+                    android:background="@drawable/round_border_dup"/>
+
+                <TextView
+                    android:id="@+id/txt_person_four"
+                    android:visibility="gone"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/seguisb"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Full name of the fourth person *"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"/>
+
+                <EditText
+                    android:visibility="gone"
+                    android:id="@+id/appl_person_four"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:inputType="text"
+                    android:background="@drawable/round_border_dup"/>
+
+                <TextView
+                    android:id="@+id/txt_person_five"
+                    android:visibility="gone"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/seguisb"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Full name of the fifth person *"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"/>
+
+                <EditText
+                    android:visibility="gone"
+                    android:id="@+id/appl_person_five"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:inputType="text"
+                    android:background="@drawable/round_border_dup"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:visibility="visible"
+            android:layout_marginTop="10dp"
+            app:cardElevation="20dp"
+            app:cardCornerRadius="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:fontFamily="@font/seguisb"
+                    android:id="@+id/declaration_part"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Declaration"
+                    android:textAllCaps="true"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textColor="#fff"
+                    android:background="#07DDF8"/>
+                <View
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#969393"/>
+
+                <TextView
+                    android:visibility="visible"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/seguisb"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="I hereby solemnly affirm and declare that to the best of my knowledge and belief :"
+                    android:textStyle="bold"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:visibility="visible"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/seguisb"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="I have not concealed or suppressed any information, the disclosure of which would make me disentitled for this Pass."
+                    android:textStyle="bold"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:visibility="visible"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/seguisb"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="I shall be held responsible for any misrepresentation or false information given by me while applying for this Pass."
+                    android:textStyle="bold"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:paddingLeft="5dp"
+                    android:visibility="visible"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/seguisb"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="I hereby agree to present the proof/documents in original during inspection at the checkpoint as mentioned above"
+                    android:textStyle="bold"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:visibility="visible"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/seguisb"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Select I agree to proceed *"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox_proceed"
+                    android:text="I agree"
+                    android:textColor="#000"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:visibility="visible"
+            android:layout_marginTop="10dp"
+            app:cardElevation="20dp"
+            app:cardCornerRadius="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/seguisb"
+                    android:id="@+id/word_verfication_part"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Word Verification"
+                    android:textAllCaps="true"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textColor="#000" />
+                <View
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#969393"/>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/word_verfication_part"
+                    android:fontFamily="@font/poppins_light"
+                    android:id="@+id/random_word"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="123dp"
+                    android:layout_height="wrap_content"
+                    android:text="000000"
+                    android:textAllCaps="true"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:layout_alignParentStart="true"
+                    android:textSize="36sp"
+                    android:textColor="#07E910"
+                    android:background="#000"/>
+
+                <ImageButton
+                    android:onClick="btn_refresh_word"
+                    android:id="@+id/btn_refresh"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_below="@id/word_verfication_part"
+                    android:layout_toEndOf="@id/random_word"
+                    android:src="@drawable/ic_refresh"/>
+
+                <TextView
+                    android:fontFamily="@font/seguisb"
+                    android:id="@+id/cmmt_word_verfication"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Please enter the characters shown above"
+                    android:textAllCaps="false"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:layout_below="@id/random_word"/>
+
+                <EditText
+                    android:layout_below="@id/cmmt_word_verfication"
+                    android:visibility="visible"
+                    android:id="@+id/word_verify"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="140dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="130dp"
+                    android:inputType="number"
+                    android:textColor="#000"
+                    android:background="@drawable/round_border_dup2"
+                    android:layout_marginBottom="20dp"/>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:onClick="pass_submit"
+            android:id="@+id/btn_transport_pass_submit"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="42dp"
+            android:text="Submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="42dp"
+            android:background="#0FC916"
+            android:textColor="#fff"
+            android:drawableStart="@drawable/ic_save_white"/>
+        <Button
+            android:onClick="pass_close"
+            android:id="@+id/btn_transport_pass_close"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="42dp"
+            android:text="Close"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="42dp"
+            android:background="#F51606"
+            android:textColor="#fff"
+            android:drawableStart="@drawable/ic_close_white"/>
+        <Button
+            android:onClick="pass_reset"
+            android:id="@+id/btn_transport_pass_reset"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="42dp"
+            android:text="RESET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="42dp"
+            android:background="#09DAF5"
+            android:textColor="#fff"
+            android:drawableStart="@drawable/ic_reset_white"
+            android:layout_marginBottom="30dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

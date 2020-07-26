@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:id="@+id/set_profile_image"
+        app:civ_border_width="5dp"
+        android:src="@drawable/covid19"
+        app:civ_border_color="#000"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/set_user_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/set_profile_image"
+        android:text="User Name"
+        android:textColorHint="#000"
+        android:background="@drawable/round_border"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:padding="6dp"
+        android:textAlignment="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:drawableStart="@drawable/ic_person_info"/>
+
+    <TextView
+        android:id="@+id/set_phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/set_user_name"
+        android:textColorHint="#000"
+        android:background="@drawable/round_border"
+        android:textColor="#000"
+        android:text="Phone Number"
+        android:textStyle="bold"
+        android:padding="6dp"
+        android:textAlignment="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:drawableStart="@drawable/ic_call"/>
+
+    <TextView
+        android:id="@+id/set_position"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/set_phone_number"
+        android:background="@drawable/round_border"
+        android:textColor="#000"
+        android:text="Position"
+        android:textStyle="bold"
+        android:padding="6dp"
+        android:textAlignment="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:drawableStart="@drawable/ic_info"/>
+
+</RelativeLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DetailedActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:cardElevation="10dp"
+        android:id="@+id/cardView"
+        app:cardCornerRadius="6dp"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp">
+
+                <ProgressBar
+                    android:layout_gravity="center"
+                    android:id="@+id/loader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+                <ImageView
+                    android:background="@drawable/gradient"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:text="Title"
+                    android:padding="10dp"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/white"
+                    android:id="@+id/tvTitle1"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:layout_gravity="bottom"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Source"
+                        android:textSize="16dp"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/white"
+                        android:padding="10dp"
+                        android:id="@+id/tvSource1"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+
+            </FrameLayout>
+
+            <TextView
+                android:text="Date"
+                android:textSize="20dp"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:textColor="@color/black"
+                android:id="@+id/tvDesc"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="6dp"
+        android:layout_marginTop="10dp"
+        android:padding="10dp">
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

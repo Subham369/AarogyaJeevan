@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:weightSum="5">
+
+    <ImageView
+        android:layout_weight="1"
+        android:layout_width="80dp"
+        android:layout_height="55dp"
+        android:id="@+id/imgFlag"
+        android:src="@drawable/flag"
+        android:padding="5dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/user_name"
+            android:layout_gravity="center_vertical"
+            android:textStyle="bold"
+            android:paddingLeft="10dp"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_below="@id/user_name"
+            android:layout_weight="1"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvlatitude"
+            android:layout_gravity="center_vertical"
+            android:textStyle="bold"
+            android:paddingLeft="10dp"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_below="@id/user_name"
+            android:layout_toEndOf="@id/tvlatitude"
+            android:id="@+id/tvlogitude"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="10dp"
+    android:background="@color/colorAccent"
+    tools:context=".CouncellingActivity">
+    <ImageView
+        android:src="@drawable/onlinedoctor"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"/>
+    <EditText
+        android:background="@drawable/round_border"
+        android:hint="Mobile Number"
+        android:inputType="phone"
+        android:textStyle="italic"
+        android:id="@+id/login_phone"
+        android:textSize="20dp"
+        android:padding="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:background="@drawable/round_border"
+        android:hint="Password"
+        android:textStyle="italic"
+        android:layout_marginTop="15dp"
+        android:inputType="textPassword"
+        android:id="@+id/login_password"
+        android:textSize="20dp"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:text="Log in"
+        android:textSize="20dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/round_bg"
+        android:textAllCaps="true"
+        android:layout_width="match_parent"
+        android:textColor="#fff"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:textSize="20dp"
+        android:id="@+id/txt_signUp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textColor="#000"
+        android:text="Don't have an account? Sign Up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

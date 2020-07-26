@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_one"
+    tools:context=".CouncellingSignupActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/signup_page"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@color/colorPrimary"
+            android:fontFamily="@font/seguisb"
+            android:text="Online Councelling Signup Page"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:padding="5dp"/>
+
+        <EditText
+            android:id="@+id/signup_server_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/round_border"
+            android:drawableStart="@drawable/ic_person_info"
+            android:drawablePadding="16dp"
+            android:ems="10"
+            android:hint="Person Name"
+            android:fontFamily="@font/seguisb"
+            android:inputType="text"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signup_page"
+            android:textColorHint="#fff"
+            android:textColor="#fff"/>
+
+        <EditText
+            android:id="@+id/signup_server_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/round_border"
+            android:drawableStart="@drawable/ic_email"
+            android:drawablePadding="16dp"
+            android:ems="10"
+            android:hint="Email Address"
+            android:fontFamily="@font/seguisb"
+            android:inputType="textEmailAddress"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signup_server_name"
+            android:textColorHint="#fff"
+            android:textColor="#fff"/>
+
+        <EditText
+            android:id="@+id/signup_server_phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/round_border"
+            android:drawableStart="@drawable/ic_call"
+            android:drawablePadding="16dp"
+            android:ems="10"
+            android:hint="Person Mobile Number"
+            android:fontFamily="@font/seguisb"
+            android:inputType="phone"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signup_server_email"
+            android:textColorHint="#fff"
+            android:textColor="#fff"/>
+
+        <EditText
+            android:id="@+id/signup_server_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/round_border"
+            android:drawableStart="@drawable/ic_security"
+            android:drawablePadding="16dp"
+            android:ems="10"
+            android:hint="Password"
+            android:fontFamily="@font/seguisb"
+            android:inputType="textPassword"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signup_server_phone"
+            android:textColorHint="#fff"
+            android:textColor="#fff"/>
+
+        <TextView
+            android:id="@+id/signup_server_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:ems="10"
+            android:text="Doctor or Patient ?"
+            android:textSize="16sp"
+            android:fontFamily="@font/seguisb"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signup_server_password"
+            android:textColorHint="#fff"
+            android:textColor="#fff"/>
+
+        <Spinner
+            android:id="@+id/signup_server_position"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="64dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="#fff"
+            app:layout_constraintTop_toBottomOf="@id/signup_server_txt" />
+
+        <EditText
+            android:id="@+id/signup_server_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/round_border"
+            android:drawableStart="@drawable/ic_add_location"
+            android:drawablePadding="16dp"
+            android:ems="10"
+            android:hint="Person Address"
+            android:fontFamily="@font/seguisb"
+            android:inputType="text"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signup_server_position"
+            android:textColorHint="#fff"
+            android:textColor="#fff"/>
+
+        <Button
+            android:id="@+id/btn_server_signup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="SIGNUP"
+            android:textColor="#fff"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="82dp"
+            android:layout_marginEnd="82dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/round_bg"
+            android:ems="10"
+            android:fontFamily="@font/seguisb"
+            android:textColorHint="#746E6E"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signup_server_address"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

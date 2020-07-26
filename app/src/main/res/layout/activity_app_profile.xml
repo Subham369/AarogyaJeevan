@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:toggle="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    tools:context=".AppProfileActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_setting"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:theme="@style/AppTheme.AppBarOverlay" />
+
+<!--    <com.google.android.material.appbar.AppBarLayout-->
+<!--        android:id="@+id/bar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/toolbar"-->
+<!--            android:background="@color/colorPrimaryDark"-->
+<!--            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">-->
+<!--            <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                android:onClick="clkProfile"-->
+<!--                android:layout_width="40dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:id="@+id/profile_image"-->
+<!--                android:src="@mipmap/ic_launcher_round"/>-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/username"-->
+<!--                android:fontFamily="@font/lato_bolditalic"-->
+<!--                android:text=" "-->
+<!--                android:layout_marginLeft="25dp"-->
+<!--                android:textColor="#fff"-->
+<!--                android:textStyle="bold"-->
+<!--                android:layout_marginStart="25dp"/>-->
+<!--        </androidx.appcompat.widget.Toolbar>-->
+
+<!--    </com.google.android.material.appbar.AppBarLayout>-->
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_below="@id/toolbar_setting"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_gravity="center"
+        android:id="@+id/image_profile"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="15dp" />
+
+    <TextView
+        android:layout_below="@id/toolbar_setting"
+        android:textColor="#615A5A"
+        android:id="@+id/userinfo_phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:fontFamily="@font/lato_bolditalic"
+        android:text="6371669131"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="15dp"
+        android:textSize="20sp"
+        android:layout_toEndOf="@id/image_profile"/>
+
+    <TextView
+        android:textColor="#615A5A"
+    android:id="@+id/userinfo_name"
+    android:layout_width="match_parent"
+    android:layout_height="30sp"
+    android:text="Subham Mohanta"
+    android:fontFamily="@font/lato_bolditalic"
+    android:layout_marginTop="20dp"
+    android:textSize="18sp"
+        android:padding="5dp"
+        android:layout_marginStart="15dp"
+    android:layout_below="@id/userinfo_phone_number"
+    android:layout_toEndOf="@id/image_profile"/>
+
+    <TextView
+        android:id="@+id/userinfo_email"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:text="subhammohanta27@gmail.com"
+        android:textColor="#615A5A"
+        android:padding="5dp"
+        android:fontFamily="@font/lato_bolditalic"
+        android:layout_marginTop="0dp"
+        android:textSize="14sp"
+        android:layout_below="@id/userinfo_name"
+        android:layout_toEndOf="@id/image_profile"
+        android:layout_marginStart="15dp"/>
+
+    <TextView
+        android:id="@+id/userinfo_editting"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:text="Edit Details"
+        android:layout_marginStart="15dp"
+        android:textColor="@color/colorPrimary"
+        android:padding="5dp"
+        android:fontFamily="@font/lato_bolditalic"
+        android:layout_marginTop="0dp"
+        android:textSize="12sp"
+        android:layout_below="@id/userinfo_email"
+        android:layout_toEndOf="@id/image_profile"/>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#D3CDCD"
+        android:layout_below="@id/userinfo_editting"/>
+
+    <ImageView
+        android:id="@+id/img_location"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_add_location"
+        android:layout_below="@id/view1"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"/>
+
+    <TextView
+        android:id="@+id/userinfo_location"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="My Address"
+        android:layout_marginStart="15dp"
+        android:textSize="18sp"
+        android:textColor="#615A5A"
+        android:fontFamily="@font/lato_bolditalic"
+        android:layout_below="@id/view1"
+        android:layout_toEndOf="@id/img_location"
+        android:layout_marginTop="20dp"/>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#D3CDCD"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="50dp"
+        android:layout_below="@id/userinfo_location"/>
+
+    <TextView
+    android:id="@+id/img_language"
+    android:layout_width="30dp"
+    android:layout_height="30dp"
+    android:text="A"
+    android:textColor="@color/colorPrimary"
+    android:textSize="20sp"
+    android:fontFamily="@font/poppins_semibold"
+    android:textAlignment="center"
+    android:layout_below="@id/view2"
+    android:layout_marginTop="18dp"
+    android:layout_marginStart="10dp"/>
+
+    <TextView
+        android:id="@+id/userinfo_language"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="My Language"
+        android:layout_marginStart="15dp"
+        android:textSize="18sp"
+        android:textColor="#615A5A"
+        android:fontFamily="@font/lato_bolditalic"
+        android:layout_below="@id/view2"
+        android:layout_toEndOf="@id/img_language"
+        android:layout_marginTop="20dp"/>
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#D3CDCD"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="50dp"
+        android:layout_below="@id/userinfo_language"/>
+
+    <ImageView
+        android:id="@+id/img_color"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_color_lens"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textAlignment="center"
+        android:layout_below="@id/view3"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="10dp"/>
+
+    <!--    <net.margaritov.preference.colorpicker.ColorPickerPreference-->
+<!--        android:layout_width="53dp"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginEnd="358dp"-->
+<!--        android:defaultValue="@color/pumpkin_orange"-->
+<!--        android:key="color1"-->
+<!--        android:summary="@string/color1_summary"-->
+<!--        android:title="@string/color1_title" />-->
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/view3"
+        android:layout_toEndOf="@id/userinfo_app_color"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"/>
+
+    <TextView
+        android:id="@+id/userinfo_app_color"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/view3"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="-4dp"
+        android:layout_toEndOf="@id/img_language"
+        android:fontFamily="@font/lato_bolditalic"
+        android:text="My App Color"
+        android:textColor="#615A5A"
+        android:textSize="18sp" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#D3CDCD"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="0dp"
+        android:layout_below="@id/userinfo_app_color"/>
+
+    <ImageView
+        android:id="@+id/img_password"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_lock"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textAlignment="center"
+        android:layout_below="@id/view4"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="10dp"/>
+
+    <TextView
+        android:onClick="changePassword"
+        android:id="@+id/userinfo_change_password"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Change Password"
+        android:layout_marginStart="15dp"
+        android:textSize="18sp"
+        android:textColor="#615A5A"
+        android:fontFamily="@font/lato_bolditalic"
+        android:layout_below="@id/view4"
+        android:layout_toEndOf="@id/img_password"
+        android:layout_marginTop="20dp"/>
+
+    <View
+        android:id="@+id/view5"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#D3CDCD"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="50dp"
+        android:layout_below="@id/userinfo_change_password"/>
+
+    <ImageView
+        android:id="@+id/img_screen_lock"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_lock"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textAlignment="center"
+        android:layout_below="@id/view5"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="10dp"/>
+
+    <TextView
+        android:id="@+id/userinfo_screen_lock"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@id/view5"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:layout_toEndOf="@id/img_screen_lock"
+        android:fontFamily="@font/lato_bolditalic"
+        android:text="Disable Screen Lock"
+        android:textColor="#615A5A"
+        android:textSize="18sp" />
+
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_toEndOf="@+id/userinfo_screen_lock"
+        android:textOn="Lock On"
+        android:textOff="Lock Off"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="10dp"
+        android:layout_below="@+id/view5"/>
+
+    <View
+        android:id="@+id/view6"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#D3CDCD"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="50dp"
+        android:layout_below="@id/userinfo_screen_lock"/>
+</RelativeLayout>

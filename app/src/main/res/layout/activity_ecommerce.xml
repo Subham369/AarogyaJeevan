@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".ECommerceActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/app_logo"
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            app:srcCompat="@drawable/applogo"
+            />
+
+        <TextView
+            android:id="@+id/app_slogan"
+            android:layout_width="248dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="80dp"
+            android:layout_marginTop="142dp"
+            android:fontFamily="@font/lato_bolditalic"
+            android:text="Find, Discover, Choose and Buy anything online."
+            android:textAlignment="center"
+            android:textColor="@color/active"
+            android:textSize="25sp"
+            android:textStyle="italic"
+            />
+
+        <ImageView
+            android:id="@+id/app_photo"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:src="@drawable/welcome"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_below="@id/app_slogan"/>
+
+
+        <Button
+            android:id="@+id/main_join_now_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:fontFamily="@font/lato_bolditalic"
+            android:background="@drawable/buttons"
+            android:padding="20dp"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:text="Join Now"
+            android:textColor="@android:color/white"
+            android:layout_below="@id/app_photo"/>
+
+        <Button
+            android:id="@+id/main_login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="@font/lato_bolditalic"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/buttons"
+            android:padding="20dp"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:text="Already have an Account? Login"
+            android:textColor="@android:color/white"
+            android:layout_below="@id/main_join_now_btn"/>
+
+    </RelativeLayout>
+
+</ScrollView>

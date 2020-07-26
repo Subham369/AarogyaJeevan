@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "629132358416",
+    "firebase_url": "https://aarogya-jeevan-75f43.firebaseio.com",
+    "project_id": "aarogya-jeevan-75f43",
+    "storage_bucket": "aarogya-jeevan-75f43.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:629132358416:android:54e3d9f27e65f583a36b95",
+        "android_client_info": {
+          "package_name": "com.example.aarogyajeevan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "629132358416-ff0v0sgi78oj2aog3hovb1dmrqds3rql.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aarogyajeevan",
+            "certificate_hash": "e63649f2de89e559f75329d046eb72220637e9d4"
+          }
+        },
+        {
+          "client_id": "629132358416-91l00g8qa5u4f3elbpf43ptjqujdeq4h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhzpw4m443y3RuP8Lc8fdBUqmxrodhIKs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "629132358416-91l00g8qa5u4f3elbpf43ptjqujdeq4h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

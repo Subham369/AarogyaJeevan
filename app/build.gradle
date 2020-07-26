@@ -1,0 +1,94 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+repositories {
+    maven {
+        url "https://dl.bintray.com/ibm-cloud-sdks/ibm-cloud-sdk-repo"
+    }
+}
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+    defaultConfig {
+        applicationId "com.example.aarogyajeevan"
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.firebase:firebase-core:16.0.4'
+    implementation 'com.google.firebase:firebase-auth:16.0.5'
+    implementation 'com.google.firebase:firebase-database:16.0.4'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.firebase:firebase-storage:16.0.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.karumi:dexter:5.0.0'
+    implementation 'com.github.mancj:MaterialSearchBar:0.8.2'
+    implementation 'com.skyfishjy.ripplebackground:library:1.0.1'
+    implementation 'com.google.android.libraries.places:places:2.3.0'
+    implementation 'com.leo.simplearcloader:simplearcloader:1.0.0'
+    implementation 'com.github.blackfizz:eazegraph:1.2.5l@aar'
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+//    implementation 'com.squareup.picasso:picasso:2.5.0'
+    implementation 'org.ocpsoft.prettytime:prettytime:4.0.1.Final'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
+    implementation 'com.ibm.watson:assistant:8.1.0'
+    implementation 'com.ibm.watson:text-to-speech:8.1.0'
+    implementation 'com.ibm.watson:speech-to-text:8.1.0'
+    implementation 'com.ibm.watson.developer_cloud:android-sdk:0.5.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    api 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
+    implementation 'com.rengwuxian.materialedittext:library:2.1.4'
+    implementation 'io.agora.rtc:full-sdk:3.0.1'
+    implementation 'com.airbnb.android:lottie:3.4.0'
+    implementation 'io.paperdb:paperdb:2.7.1'
+
+    implementation 'com.github.rey5137:material:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'androidx.navigation:navigation-ui:2.3.0'
+
+    implementation 'com.firebaseui:firebase-ui-database:3.2.2'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.cepheuen.elegant-number-button:lib:1.0.2'
+//    implementation project(path: ':Material-Color-Picker-master')
+//    implementation 'androidx.support:appcompat-v4:28.0.0'
+//    implementation 'androidx.support:design:25.1.1'
+//    implementation project(':ColorPickerPreference')
+
+//    implementation 'net.margaritov.preference.colorpicker.ColorPickerPreference:ColorPickerPreference:1.0.0'
+//
+//    implementation 'com.android.support:appcompat-v7:29.1.1'
+//    implementation 'com.android.support:design:29.1.1'
+//    implementation project(path: ':Material-Color-Picker-master')
+//    implementation 'com.afollestad.material-dialogs:color:3.3.0'
+}

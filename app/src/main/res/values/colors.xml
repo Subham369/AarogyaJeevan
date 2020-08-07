@@ -34,4 +34,22 @@
     <color name="color_Primary_Dark">#181A24</color>
     <color name="color_White">#ffffff</color>
     <color name="color_TransparentWhite">#cccccc</color>
+
+    <color name="lightColorAccent">#30FF4081</color>
+
+    <!--<color name="dark_black">#CC262626</color>-->
+
+    <color name="transparent_75_white">#ACFFFFFF</color>
+
+    <color name="black_light">#CC222222</color>
+
+    <color name="dark_black">#FF333333</color>
+    <color name="agora_blue">#006AD8</color>
+
+    <color name="colorPrimaryLight">#C8E6C9</color>
+    <color name="colorOverdue">#E53935</color>
+    <color name="colorCompleted">#9E9E9E</color>
+    <color name="colorCompletedBackground">#EEEEEE</color>
+    <color name="colorUncompletedBackground">#FFFFFF</color>
+    <color name="colorNormalWidgetText">#757575</color>
 </resources>

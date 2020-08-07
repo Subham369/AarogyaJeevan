@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.example.aarogyajeevan.Model.Doctor;
 import com.example.aarogyajeevan.Model.Patient;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -80,14 +81,16 @@ public class CouncellingActivity extends AppCompatActivity {
     private void loginUser(final String phone, final String password)
     {
         final DatabaseReference RootRef;
+        FirebaseUser fuser=mAuth.getCurrentUser();
+        final String userId=fuser.getUid();
         RootRef = FirebaseDatabase.getInstance().getReference();
         RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot)
             {
-                if (dataSnapshot.child(parentDbDoctor).child(phone).exists())
+                if (dataSnapshot.child(parentDbDoctor).child(userId).exists())
                 {
-                    Doctor usersData = dataSnapshot.child(parentDbDoctor).child(phone).getValue(Doctor.class);
+                    Doctor usersData = dataSnapshot.child(parentDbDoctor).child(userId).getValue(Doctor.class);
 
                     if (usersData.getPhone().equals(phone))
                     {
@@ -98,7 +101,7 @@ public class CouncellingActivity extends AppCompatActivity {
                                 Toast.makeText(CouncellingActivity.this, "logged in Successfully...", Toast.LENGTH_SHORT).show();
                                 pd.dismiss();
 
-                                Intent intent = new Intent(CouncellingActivity.this, VideoCallingActivity.class);
+                                Intent intent = new Intent(CouncellingActivity.this, PatientListActivity.class);
 //                                intent.putExtra("phone_number",phone);
                                 startActivity(intent);
                             }
@@ -111,9 +114,9 @@ public class CouncellingActivity extends AppCompatActivity {
                     }
                 }
 
-                else if (dataSnapshot.child(parentDbPatient).child(phone).exists())
+                else if (dataSnapshot.child(parentDbPatient).child(userId).exists())
                 {
-                    Patient usersData = dataSnapshot.child(parentDbPatient).child(phone).getValue(Patient.class);
+                    Patient usersData = dataSnapshot.child(parentDbPatient).child(userId).getValue(Patient.class);
 
                     if (usersData.getPhone().equals(phone))
                     {
@@ -124,7 +127,7 @@ public class CouncellingActivity extends AppCompatActivity {
                                 Toast.makeText(CouncellingActivity.this, "logged in Successfully...", Toast.LENGTH_SHORT).show();
                                 pd.dismiss();
 
-                                Intent intent = new Intent(CouncellingActivity.this, VideoCallingActivity.class);
+                                Intent intent = new Intent(CouncellingActivity.this, DoctorListActivity.class);
 //                                intent.putExtra("phone_number",phone);
                                 startActivity(intent);
                             }

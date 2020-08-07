@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -46,16 +48,38 @@ public class AppFeatures extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
     PieChart pieChart;
-    TextView tvcases,tvrecovered,tvactive,tvtotaldeaths;
     String t1,t2,t3,t4;
     CircleImageView profile_image;
     TextView username;
     DatabaseReference reference;
     DatabaseReference rootref;
 
+    SharedPreferences app_preferences;
+    SharedPreferences.Editor editor;
+    Methods methods;
+    int appColor;
+    int appTheme;
+    int themeColor;
+    ConstantColor constant;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+//        app_preferences = PreferenceManager.getDefaultSharedPreferences(this);
+//        appColor = app_preferences.getInt("color", 0);
+//        appTheme = app_preferences.getInt("theme", 0);
+//        themeColor = appColor;
+//        constant.color = appColor;
+//
+//        if (themeColor == 0){
+//            setTheme(ConstantColor.theme);
+//        }else if (appTheme == 0){
+//            setTheme(ConstantColor.theme);
+//        }else{
+//            setTheme(appTheme);
+//        }
+
         setContentView(R.layout.activity_app_features);
 
         Toolbar toolbar=findViewById(R.id.toolbar);
@@ -138,23 +162,11 @@ public class AppFeatures extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId()==R.id.help){
-            Intent intent=new Intent(getApplicationContext(),HelpLine.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            startActivity(intent);
-        }
         if (item.getItemId()==R.id.logout){
             FirebaseAuth.getInstance().signOut();
             finish();
             Intent intent=new Intent(getApplicationContext(),UserDetails.class);
             startActivity(intent);
-        }
-
-        if (item.getItemId()==R.id.add)
-        {
-
-//            Intent intent=new Intent(getApplicationContext(),AddActivity.class);
-//            startActivity(intent);
         }
 
         if (item.getItemId()==R.id.faq)
@@ -222,14 +234,14 @@ public class AppFeatures extends AppCompatActivity {
     public void clkPass(View view) {
         String userId=firebaseUser.getUid();
         Toast.makeText(this, "User ID : "+userId, Toast.LENGTH_LONG).show();
-        if (userId.compareTo("lDdE5HnKo1TO2J5XrUZm2uV4p2z2")==0){
+        if (userId.compareTo("KGhVwUwoy5YtVJzMSwyt2AHQc9q1")==0){
             Toast.makeText(this, "Permission granter", Toast.LENGTH_SHORT).show();
             Intent intent=new Intent(AppFeatures.this,EastServerActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
         }
         else{
-            Intent intent=new Intent(AppFeatures.this,HostRequestActivity.class);
+            Intent intent=new Intent(AppFeatures.this,TransportPassActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
         }
@@ -297,6 +309,11 @@ public class AppFeatures extends AppCompatActivity {
 
     public void clkProfile(View view) {
         Intent intent=new Intent(AppFeatures.this,AppProfileActivity.class);
+        startActivity(intent);
+    }
+
+    public void clkHospitalBook(View view) {
+        Intent intent=new Intent(AppFeatures.this,HospitalBookingActivity.class);
         startActivity(intent);
     }
 }

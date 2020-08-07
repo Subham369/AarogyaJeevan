@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="15dp"
+    android:layout_marginBottom="5dp"
+    app:cardElevation="15dp"
+    tools:context=".HospitalAdminMaintainProducts">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/product_image_maintain"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@+id/product_name"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="2dp"
+            />
+
+        <EditText
+            android:id="@+id/hospital_name_maintain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/product_image_maintain"
+            android:hint="Hospital Name"
+            android:textColorHint="#000"
+            android:textColor="#000"
+            android:fontFamily="@font/lato_bold"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:padding="12dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/input_design"
+            />
+
+        <EditText
+            android:id="@+id/hospital_price_maintain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hospital_name_maintain"
+            android:hint="Bed Price"
+            android:fontFamily="@font/lato_bold"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:padding="12dp"
+            android:textColorHint="#000"
+            android:textColor="#000"
+            android:layout_margin="5dp"
+            android:background="@drawable/input_design"
+            />
+
+        <EditText
+            android:id="@+id/hospital_total_bed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hospital_price_maintain"
+            android:hint="Total Bed"
+            android:layout_marginTop="2dp"
+            android:textAlignment="center"
+            android:fontFamily="@font/lato_bold"
+            android:textSize="16dp"
+            android:padding="12dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/input_design"
+            android:textColorHint="#000"
+            android:textColor="#000"
+            />
+
+        <Button
+            android:id="@+id/apply_changes_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hospital_total_bed"
+            android:text="Apply Changes"
+            android:fontFamily="@font/lato_bold"
+            android:layout_marginTop="20dp"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:padding="12dp"
+           android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            android:background="@drawable/round_bg"
+            android:textColor="@android:color/white"
+            />
+
+
+        <Button
+            android:id="@+id/delete_product_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/apply_changes_btn"
+            android:text="Delete This Product"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:padding="12dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/round_bg"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/lato_bold"
+            />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

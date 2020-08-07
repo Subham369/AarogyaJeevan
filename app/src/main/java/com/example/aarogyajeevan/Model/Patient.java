@@ -1,6 +1,7 @@
 package com.example.aarogyajeevan.Model;
 
 public class Patient {
+    private String id;
     private String userName;
     private String email;
     private String phone;
@@ -11,13 +12,22 @@ public class Patient {
     public Patient() {
     }
 
-    public Patient(String userName, String email, String phone, String password, String address, String position) {
+    public Patient(String id,String userName, String email, String phone, String password, String address, String position) {
+        this.id=id;
         this.userName = userName;
         this.email = email;
         this.phone = phone;
         this.password = password;
         this.address = address;
         this.position = position;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getUserName() {

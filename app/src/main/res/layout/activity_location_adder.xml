@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LocationAdderActivity">
+
+    <EditText
+        android:id="@+id/add_latitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Latitude"
+        android:padding="5dp"
+        android:inputType="numberDecimal"
+        android:textColor="#000"/>
+
+    <EditText
+        android:id="@+id/add_longitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Longitude"
+        android:padding="5dp"
+        android:inputType="numberDecimal"
+        android:textColor="#000"
+        android:layout_below="@id/add_latitude"/>
+
+    <Button
+        android:id="@+id/location_submit"
+        android:layout_width="match_parent"
+        android:text="Submit"
+        android:textColor="@color/color_white"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/add_longitude"
+        android:background="@drawable/round_bg"
+        android:layout_marginTop="20dp"
+        android:layout_margin="32dp"/>
+
+</RelativeLayout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/doctor_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Doctor's name"
+            android:padding="5dp"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/txt_doctor_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:text="Name"
+            android:padding="5dp"
+            android:textSize="20sp"
+            android:layout_below="@id/doctor_name"/>
+
+
+        <TextView
+            android:id="@+id/doctor_specialization"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Specialization"
+            android:padding="5dp"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="20sp"
+            android:layout_below="@id/txt_doctor_name"/>
+
+        <TextView
+            android:id="@+id/txt_doctor_specialization"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:text="Specialization"
+            android:padding="5dp"
+            android:textSize="20sp"
+            android:layout_below="@id/doctor_specialization"/>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_below="@id/relative">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/doctor_hospital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hospital"
+                android:padding="5dp"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/txt_doctor_hospital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:text="Hospital"
+                android:padding="5dp"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/doctor_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time"
+                android:padding="5dp"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/txt_doctor_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:padding="5dp"
+                android:text="Time"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

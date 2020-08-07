@@ -1,262 +1,194 @@
 package com.example.aarogyajeevan;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
-import android.Manifest;
-import android.content.pm.PackageManager;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.SurfaceView;
+import android.text.TextWatcher;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.widget.EditText;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import android.content.Intent;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.app.ActionBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import io.agora.rtc.Constants;
-import io.agora.rtc.IRtcEngineEventHandler;
-import io.agora.rtc.RtcEngine;
-import io.agora.rtc.video.VideoCanvas;
-import io.agora.rtc.video.VideoEncoderConfiguration;
+import androidx.annotation.NonNull;
 
-public class VideoCallingActivity extends AppCompatActivity {
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
 
-    private RtcEngine mRtcEngine;
-    private static final int PERMISSION_REQ_ID = 22;
-    private static final String[] REQUESTED_PERMISSIONS = {Manifest.permission.RECORD_AUDIO, Manifest.permission.CAMERA};
-    private static final String LOG_TAG = VideoCallingActivity.class.getSimpleName();
+import java.util.HashMap;
 
-    private final IRtcEngineEventHandler mRtcEventHandler = new IRtcEngineEventHandler() {
-        @Override
-        public void onFirstRemoteVideoDecoded(final int uid, int width, int height, int elapsed) {
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    // set first remote user to the main bg video container
-                    setupRemoteVideoStream(uid);
-                }
-            });
-        }
+public class VideoCallingActivity extends BaseActivity {
 
-        // remote user has left channel
-        @Override
-        public void onUserOffline(int uid, int reason) { // Tutorial Step 7
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    onRemoteUserLeft();
-                }
-            });
-        }
+    private EditText v_channel;
+    private EditText v_encryption_key;
+    private TextView send_Email_Doctor;
 
-        // remote user has toggled their video
-        @Override
-        public void onUserMuteVideo(final int uid, final boolean toggle) { // Tutorial Step 10
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    onRemoteUserVideoToggle(uid, toggle);
-                }
-            });
-        }
-    };
+    private final static Logger log = LoggerFactory.getLogger(VideoCallingActivity.class);
 
+
+    @SuppressLint("WrongConstant")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_calling);
-        if (checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID) &&
-                checkSelfPermission(REQUESTED_PERMISSIONS[1], PERMISSION_REQ_ID)) {
-            initAgoraEngine();
+        androidx.appcompat.app.ActionBar ab = getSupportActionBar();
+        if (ab != null) {
+            ab.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+            ab.setCustomView(R.layout.ard_agora_actionbar);
         }
-
-        findViewById(R.id.audioBtn).setVisibility(View.GONE); // set the audio button hidden
-        findViewById(R.id.leaveBtn).setVisibility(View.GONE); // set the leave button hidden
-        findViewById(R.id.videoBtn).setVisibility(View.GONE); // set the video button hidden
     }
 
+    @Override
+    protected void initUIandEvent() {
+        v_channel = (EditText) findViewById(R.id.channel_name);
+        v_channel.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-    private void initAgoraEngine() {
-        try {
-            mRtcEngine = RtcEngine.create(getBaseContext(), getString(R.string.agora_app_id), mRtcEventHandler);
-        } catch (Exception e) {
-            Log.e(LOG_TAG, Log.getStackTraceString(e));
-
-            throw new RuntimeException("NEED TO check rtc sdk init fatal error\n" + Log.getStackTraceString(e));
-        }
-        setupSession();
-    }
-
-    private void setupSession() {
-        mRtcEngine.setChannelProfile(Constants.CHANNEL_PROFILE_COMMUNICATION);
-
-        mRtcEngine.enableVideo();
-
-        mRtcEngine.setVideoEncoderConfiguration(new VideoEncoderConfiguration(VideoEncoderConfiguration.VD_640x480, VideoEncoderConfiguration.FRAME_RATE.FRAME_RATE_FPS_30,
-                VideoEncoderConfiguration.STANDARD_BITRATE,
-                VideoEncoderConfiguration.ORIENTATION_MODE.ORIENTATION_MODE_FIXED_PORTRAIT));
-    }
-
-    private void setupLocalVideoFeed() {
-
-        // setup the container for the local user
-        FrameLayout videoContainer = findViewById(R.id.floating_video_container);
-        SurfaceView videoSurface = RtcEngine.CreateRendererView(getBaseContext());
-        videoSurface.setZOrderMediaOverlay(true);
-        videoContainer.addView(videoSurface);
-        mRtcEngine.setupLocalVideo(new VideoCanvas(videoSurface, VideoCanvas.RENDER_MODE_FIT, 0));
-    }
-
-    private void setupRemoteVideoStream(int uid) {
-        // setup ui element for the remote stream
-        FrameLayout videoContainer = findViewById(R.id.bg_video_container);
-        // ignore any new streams that join the session
-        if (videoContainer.getChildCount() >= 1) {
-            return;
-        }
-
-        SurfaceView videoSurface = RtcEngine.CreateRendererView(getBaseContext());
-        videoContainer.addView(videoSurface);
-        mRtcEngine.setupRemoteVideo(new VideoCanvas(videoSurface, VideoCanvas.RENDER_MODE_FIT, uid));
-        mRtcEngine.setRemoteSubscribeFallbackOption(io.agora.rtc.Constants.STREAM_FALLBACK_OPTION_AUDIO_ONLY);
-
-    }
-
-    public void onAudioMuteClicked(View view) {
-        ImageView btn = (ImageView) view;
-        if (btn.isSelected()) {
-            btn.setSelected(false);
-            btn.setImageResource(R.drawable.audio_toggle_btn);
-        } else {
-            btn.setSelected(true);
-            btn.setImageResource(R.drawable.audio_toggle_active_btn);
-        }
-
-        mRtcEngine.muteLocalAudioStream(btn.isSelected());
-    }
-
-    public void onVideoMuteClicked(View view) {
-        ImageView btn = (ImageView) view;
-        if (btn.isSelected()) {
-            btn.setSelected(false);
-            btn.setImageResource(R.drawable.video_toggle_btn);
-        } else {
-            btn.setSelected(true);
-            btn.setImageResource(R.drawable.video_toggle_active_btn);
-        }
-
-        mRtcEngine.muteLocalVideoStream(btn.isSelected());
-
-        FrameLayout container = findViewById(R.id.floating_video_container);
-        container.setVisibility(btn.isSelected() ? View.GONE : View.VISIBLE);
-        SurfaceView videoSurface = (SurfaceView) container.getChildAt(0);
-        videoSurface.setZOrderMediaOverlay(!btn.isSelected());
-        videoSurface.setVisibility(btn.isSelected() ? View.GONE : View.VISIBLE);
-    }
-
-    // join the channel when user clicks UI button
-    public void onjoinChannelClicked(View view) {
-        mRtcEngine.joinChannel(null, "test-channel", "Extra Optional Data", 0); // if you do not specify the uid, Agora will assign one.
-        setupLocalVideoFeed();
-        findViewById(R.id.joinBtn).setVisibility(View.GONE); // set the join button hidden
-        findViewById(R.id.audioBtn).setVisibility(View.VISIBLE); // set the audio button hidden
-        findViewById(R.id.leaveBtn).setVisibility(View.VISIBLE); // set the leave button hidden
-        findViewById(R.id.videoBtn).setVisibility(View.VISIBLE); // set the video button hidden
-    }
-
-    public void onLeaveChannelClicked(View view) {
-        leaveChannel();
-        removeVideo(R.id.floating_video_container);
-        removeVideo(R.id.bg_video_container);
-        findViewById(R.id.joinBtn).setVisibility(View.VISIBLE); // set the join button visible
-        findViewById(R.id.audioBtn).setVisibility(View.GONE); // set the audio button hidden
-        findViewById(R.id.leaveBtn).setVisibility(View.GONE); // set the leave button hidden
-        findViewById(R.id.videoBtn).setVisibility(View.GONE); // set the video button hidden
-    }
-
-    private void leaveChannel() {
-        mRtcEngine.leaveChannel();
-    }
-
-    private void removeVideo(int containerID) {
-        FrameLayout videoContainer = findViewById(containerID);
-        videoContainer.removeAllViews();
-    }
-
-    private void onRemoteUserVideoToggle(int uid, boolean toggle) {
-        FrameLayout videoContainer = findViewById(R.id.bg_video_container);
-
-        SurfaceView videoSurface = (SurfaceView) videoContainer.getChildAt(0);
-        videoSurface.setVisibility(toggle ? View.GONE : View.VISIBLE);
-
-        // add an icon to let the other user know remote video has been disabled
-        if (toggle) {
-            ImageView noCamera = new ImageView(this);
-            noCamera.setImageResource(R.drawable.video_disabled);
-            videoContainer.addView(noCamera);
-        } else {
-            ImageView noCamera = (ImageView) videoContainer.getChildAt(1);
-            if (noCamera != null) {
-                videoContainer.removeView(noCamera);
             }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                boolean isEmpty = TextUtils.isEmpty(s.toString());
+                findViewById(R.id.button_join).setEnabled(!isEmpty);
+            }
+        });
+
+        Spinner encryptionSpinner = (Spinner) findViewById(R.id.encryption_mode);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.encryption_mode_values, R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        encryptionSpinner.setAdapter(adapter);
+
+        encryptionSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                vSettings().mEncryptionModeIndex = position;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        encryptionSpinner.setSelection(vSettings().mEncryptionModeIndex);
+
+        String lastChannelName = vSettings().mChannelName;
+        if (!TextUtils.isEmpty(lastChannelName)) {
+            v_channel.setText(lastChannelName);
+            v_channel.setSelection(lastChannelName.length());
         }
+
+        v_encryption_key = (EditText) findViewById(R.id.encryption_key);
+        String lastEncryptionKey = vSettings().mEncryptionKey;
+        if (!TextUtils.isEmpty(lastEncryptionKey)) {
+            v_encryption_key.setText(lastEncryptionKey);
+        }
+
+//        if (position.equals("Doctor")){
+//            send_Email_Doctor.setVisibility(View.VISIBLE);
+//        }
     }
 
-    private void onRemoteUserLeft() {
-        removeVideo(R.id.bg_video_container);
+    @Override
+    protected void deInitUIandEvent() {
     }
 
-
-    public boolean checkSelfPermission(String permission, int requestCode) {
-        Log.i(LOG_TAG, "checkSelfPermission " + permission + " " + requestCode);
-        if (ContextCompat.checkSelfPermission(this,
-                permission)
-                != PackageManager.PERMISSION_GRANTED) {
-
-            ActivityCompat.requestPermissions(this,
-                    REQUESTED_PERMISSIONS,
-                    requestCode);
-            return false;
-        }
+    @Override
+    public boolean onCreateOptionsMenu(final Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
         return true;
     }
 
-
     @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                           @NonNull String permissions[], @NonNull int[] grantResults) {
-        Log.i(LOG_TAG, "onRequestPermissionsResult " + grantResults[0] + " " + requestCode);
-
-        switch (requestCode) {
-            case PERMISSION_REQ_ID: {
-                if (grantResults[0] != PackageManager.PERMISSION_GRANTED || grantResults[1] != PackageManager.PERMISSION_GRANTED) {
-                    Log.i(LOG_TAG, "Need permissions " + Manifest.permission.RECORD_AUDIO + "/" + Manifest.permission.CAMERA);
-                    break;
-                }
-
-                initAgoraEngine();
-                break;
-            }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                forwardToSettings();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-
-        leaveChannel();
-        RtcEngine.destroy();
-        mRtcEngine = null;
+    public void onClickJoin(View view) {
+        forwardToRoom();
     }
 
-    public final void showLongToast(final String msg) {
-        this.runOnUiThread(new Runnable() {
+    public void forwardToRoom() {
+        EditText v_channel = (EditText) findViewById(R.id.channel_name);
+        String channel = v_channel.getText().toString();
+        vSettings().mChannelName = channel;
+
+        EditText v_encryption_key = (EditText) findViewById(R.id.encryption_key);
+        String encryption = v_encryption_key.getText().toString();
+        vSettings().mEncryptionKey = encryption;
+
+        Intent i = new Intent(VideoCallingActivity.this, CallActivity.class);
+        i.putExtra(ConstantApp.ACTION_KEY_CHANNEL_NAME, channel);
+        i.putExtra(ConstantApp.ACTION_KEY_ENCRYPTION_KEY, encryption);
+        i.putExtra(ConstantApp.ACTION_KEY_ENCRYPTION_MODE, getResources().getStringArray(R.array.encryption_mode_values)[vSettings().mEncryptionModeIndex]);
+
+        startActivity(i);
+    }
+
+    public void forwardToSettings() {
+        Intent i = new Intent(this, SettingsActivityAppointment.class);
+        startActivity(i);
+    }
+
+    public void onClickDoNetworkTest(View view) {
+        Intent i = new Intent(VideoCallingActivity.this, NetworkTestActivity.class);
+        startActivity(i);
+    }
+
+    @Override
+    public void permissionGranted() {
+
+    }
+
+
+    public void send_Email_Patient(View view) {
+
+        String encryp_code=v_encryption_key.getText().toString();
+        HashMap<String,String> hashMap=new HashMap<>();
+        FirebaseUser firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
+        FirebaseDatabase.getInstance().getReference(firebaseUser.getUid()).child("code").setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
-            public void run() {
-                Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful())
+                    Toast.makeText(VideoCallingActivity.this, "Encryption code stored in database", Toast.LENGTH_SHORT).show();
             }
         });
+
+        String subject="Doctor Online Councelling room id for the patient";
+        String message="Thank you for applying for the Councelling. As you have requested for the Doctor Councelling. Here the channel name and encryption code for the room please enter the room 5 minutes before the assigned. Channel name: "+v_channel.getText().toString()+" Encryption Code: "+encryp_code;
+        Intent intent=new Intent(Intent.ACTION_SEND);
+        intent.putExtra(Intent.EXTRA_EMAIL,new String[]{patientEmailId});
+        intent.putExtra(Intent.EXTRA_SUBJECT,subject);
+        intent.putExtra(Intent.EXTRA_TEXT,message);
+        intent.setType("message/rfc822");
+        startActivity(Intent.createChooser(intent,"Choose an email client"));
     }
 }

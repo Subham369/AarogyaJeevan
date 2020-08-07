@@ -35,8 +35,6 @@ public class EastServerActivity extends AppCompatActivity {
 
 
         mUpload=new ArrayList<>();
-        int size=mUpload.size();
-        if (size>0) {
             databaseReference = FirebaseDatabase.getInstance().getReference("EastDistrictProgress");
             databaseReference.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -55,12 +53,6 @@ public class EastServerActivity extends AppCompatActivity {
                     Toast.makeText(EastServerActivity.this, "Error:" + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
-        }
-
-        else
-        {
-            Toast.makeText(this, "There are no permission request available", Toast.LENGTH_SHORT).show();
-        }
 
     }
 }

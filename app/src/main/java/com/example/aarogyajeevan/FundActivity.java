@@ -3,12 +3,14 @@ package com.example.aarogyajeevan;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,9 +20,14 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.razorpay.Checkout;
+import com.razorpay.PaymentResultListener;
+
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
-public class FundActivity extends AppCompatActivity {
+public class FundActivity extends AppCompatActivity implements PaymentResultListener {
 
     Spinner upi_id;
     EditText amount,note ,name;
@@ -28,6 +35,7 @@ public class FundActivity extends AppCompatActivity {
     final int UPI_PAYMENT=0;
     private int item_position=0;
     private String text="";
+    private String TAG =" main";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -203,5 +211,72 @@ public class FundActivity extends AppCompatActivity {
         note=findViewById(R.id.note);
 
     }
+
+    public void payOnline(View view) {
+        String str_pay=pay.getText().toString();
+        if (TextUtils.isEmpty(str_pay)){
+            Toast.makeText(this, "Enter the amount to pay", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            startPayment();
+        }
+
+    }
+
+    public void startPayment() {
+        /**
+         * You need to pass current activity in order to let Razorpay create CheckoutActivity
+         */
+        final Activity activity = this;
+
+        final Checkout co = new Checkout();
+
+        try {
+            JSONObject options = new JSONObject();
+            options.put("name", "PM Fund");
+            options.put("description", "Funding for COVID-19 ");
+            //You can omit the image option to fetch the image from dashboard
+            options.put("image",R.drawable.covid19 );
+            options.put("currency", "INR");
+            String payment = pay.getText().toString();
+            // amount is in paise so please multiple it by 100
+            //Payment failed Invalid amount (should be passed in integer paise. Minimum value is 100 paise, i.e. ₹ 1)
+            double total = Double.parseDouble(payment);
+            total = total * 100;
+            options.put("amount", total);
+
+
+            JSONObject preFill = new JSONObject();
+            preFill.put("email", "subhammohanta27@gmail.com");
+            preFill.put("contact", "6371669131");
+
+            options.put("prefill", preFill);
+
+            co.open(activity, options);
+        } catch (Exception e) {
+            Toast.makeText(activity, "Error in payment: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void onPaymentSuccess(String s) {
+        // payment successfull pay_DGU19rDsInjcF2
+        Log.e(TAG, " payment successfull "+ s.toString());
+        Toast.makeText(this, "Payment successfully done! " +s, Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    public void onPaymentError(int i, String s) {
+        Log.e(TAG,  "error code "+String.valueOf(i)+" -- Payment failed "+s.toString()  );
+        try {
+            Toast.makeText(this, "Payment error please try again", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Log.e("OnPaymentError", "Exception in onPaymentError", e);
+        }
+
+    }
+
 }
 

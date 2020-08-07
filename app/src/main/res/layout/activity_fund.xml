@@ -92,9 +92,29 @@
         android:textColor="#fff"
         android:background="@drawable/round_bg"
         android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginEnd="42dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/note"/>
+
+    <Button
+        android:onClick="payOnline"
+        android:layout_below="@id/note"
+        android:layout_marginTop="20dp"
+        android:text="Pay Online"
+        android:id="@+id/btn_online"
+        android:textColor="#fff"
+        android:background="@drawable/round_bg"
+        android:layout_centerHorizontal="true"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginEnd="42dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_pay"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

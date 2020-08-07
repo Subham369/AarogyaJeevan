@@ -26,16 +26,98 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
 
     <application
+        android:name=".AGApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PasswordChangeActivity"></activity>
+        <activity android:name=".AddActivity"></activity>
+        <activity android:name=".HospitalConfirmFinalOrderActivity" />
+        <activity android:name=".AboutAppActivity" />
+        <activity
+            android:name=".AddModifyTask"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".TodoListActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".VerifyEncryptionActivity" />
+        <activity android:name=".HospitalDoctorListActivity" />
+
+        <service
+            android:name=".DueCheckIntentService"
+            android:exported="false" />
+
+        <receiver
+            android:name=".DailyAlarmReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".HospitalAdminUserProductActivity" />
+        <activity android:name=".HospitalAdminAddNewProductActivity" />
+        <activity android:name=".HospitalAdminNewOrderActivity" />
+        <activity android:name=".HospitalAdminCatagoryActivity" />
+        <activity android:name=".HospitalSearchProductsActivity" />
+        <activity android:name=".UserBookingActivity" />
+        <activity android:name=".HospitalAdminMaintainProducts" />
+        <activity android:name=".HospitalProductDetailsActivity" />
+        <activity android:name=".HospitalCartActivity" />
+        <activity
+            android:name=".HospitalHomeActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".HospitalRegisterActivity" />
+        <activity android:name=".HospitalLoginActivity" />
+        <activity android:name=".HospitalBookingActivity" />
+        <activity
+            android:name=".CallOptionsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/label_options"
+            android:parentActivityName=".CallActivity" />
+        <activity
+            android:name=".SettingsActivityAppointment"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/label_settings"
+            android:parentActivityName=".VideoCallingActivity" />
+        <activity
+            android:name=".CallActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:parentActivityName=".VideoCallingActivity"
+            android:theme="@style/VideoCallTheme" />
+        <activity
+            android:name=".NetworkTestActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/label_network_testing"
+            android:parentActivityName=".VideoCallingActivity" />
+        <activity android:name=".DoctorDescActivity" />
+        <activity android:name=".DoctorListActivity" />
+        <activity android:name=".PatientListActivity" />
+
+        <receiver
+            android:name=".GeofenceBroadcastReceiverRed"
+            android:enabled="true"
+            android:exported="true" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.pref_general").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".AnalysisActivity"
+            android:label="@string/title_activity_analysis" />
+        <activity android:name=".UserReportActivity" />
+        <activity android:name=".FamilyDetailsActivity" />
+        <activity android:name=".LocationAdderActivity" />
+        <activity android:name=".PasswordChangeActivity" />
         <activity android:name=".SelectColorActivity" />
-        <activity android:name=".AppProfileActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:name=".AppProfileActivity" />
         <activity android:name=".SettingsActivityNew" />
         <activity android:name=".SearchProductsActivity" />
         <activity android:name=".AdminMaintainProductsActivity" />
@@ -71,7 +153,8 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".VideoCallingActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name" />
         <activity android:name=".CouncellingSignupActivity" />
         <activity android:name=".CouncellingActivity" />
         <activity android:name=".PostActivity" />
@@ -96,18 +179,6 @@
         <activity android:name=".TransportPassActivity" />
         <activity android:name=".PersonalPassActivity" />
         <activity android:name=".HostRequestActivity" />
-        <!--
-             The API key for Google Maps-based APIs is defined as a string resource.
-             (See the file "res/values/google_maps_api.xml").
-             Note that the API key is linked to the encryption key used to sign the APK.
-             You need a different API key for each encryption key, including the release key that is used to
-             sign the APK for publishing.
-             You can define the keys for the debug and release targets in src/debug/ and src/release/.
-        -->
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
-
         <activity
             android:name=".GeofencingActivity"
             android:label="@string/title_activity_geofencing" />
@@ -151,6 +222,12 @@
             android:exported="false"
             android:grantUriPermissions="true"
             tools:replace="android:authorities" />
+
+        <receiver android:name=".AlertReceiver" />
+
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_test_AOcT9rusLwZA6a" />
     </application>
 
 </manifest>

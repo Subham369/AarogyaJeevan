@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DoctorDescActivity">
+
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/about_doctor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="About the Doctor"
+            android:padding="5dp"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="24sp"
+            android:textAlignment="center"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorPrimary"/>
+
+        <TextView
+            android:textColor="#000"
+            android:id="@+id/doctor_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Doctor's name"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="20sp"
+            android:layout_below="@id/about_doctor"/>
+
+        <TextView
+            android:id="@+id/txt_doctor_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:text="Name"
+            android:padding="5dp"
+            android:textSize="20sp"
+            android:textColor="#272222"
+            android:layout_below="@id/doctor_name"/>
+
+        <TextView
+            android:textColor="#000"
+            android:id="@+id/doctor_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Doctor's Email Address"
+            android:padding="5dp"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="20sp"
+            android:layout_below="@id/txt_doctor_name"/>
+
+        <TextView
+            android:id="@+id/txt_doctor_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:text="Email Address"
+            android:padding="5dp"
+            android:textSize="20sp"
+            android:layout_below="@id/doctor_email"
+            android:textColor="#272222"/>
+
+
+        <TextView
+            android:textColor="#000"
+            android:id="@+id/doctor_specialization"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Specialization"
+            android:padding="5dp"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="20sp"
+            android:layout_below="@id/txt_doctor_email"/>
+
+
+        <TextView
+            android:id="@+id/txt_doctor_specialization"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:text="Specialization"
+            android:padding="5dp"
+            android:textSize="20sp"
+            android:layout_below="@id/doctor_specialization"
+            android:textColor="#272222"/>
+
+
+        <TextView
+            android:textColor="#000"
+            android:id="@+id/doctor_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Brief Description"
+            android:padding="5dp"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="20sp"
+            android:layout_below="@id/txt_doctor_specialization"/>
+
+
+        <TextView
+            android:id="@+id/txt_doctor_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/doctor_description"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="-2dp"
+            android:layout_marginEnd="0dp"
+            android:fontFamily="@font/poppins_light"
+            android:padding="5dp"
+            android:text="Brief Description about the doctor"
+            android:textColor="#272222"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/doctor_hospital"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_doctor_description"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/poppins_bold"
+            android:padding="5dp"
+            android:text="Hospital"
+            android:textColor="#000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txt_doctor_hospital"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:text="Hospital"
+            android:padding="5dp"
+            android:textSize="20sp"
+            android:layout_below="@id/doctor_hospital"
+            android:textColor="#272222"/>
+
+        <TextView
+        android:textColor="#000"
+        android:id="@+id/doctor_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Time"
+        android:padding="5dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="20sp"
+        android:layout_below="@id/txt_doctor_hospital"/>
+
+        <TextView
+            android:id="@+id/txt_doctor_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:padding="5dp"
+            android:text="Time"
+            android:textSize="20sp"
+            android:layout_below="@id/doctor_time"
+            android:textColor="#272222"/>
+
+        <Button
+            android:onClick="sendEmail"
+            android:id="@+id/btn_send_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_bg"
+            android:text="Send Email For Appointment"
+            android:contentDescription="Send an email to the doctor to fix an appointment"
+            android:textColor="#fff"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/lato_bolditalic"
+            android:layout_below="@id/txt_doctor_time"/>
+
+        <Button
+            android:id="@+id/btn_appointment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_bg"
+            android:text="Video Calling"
+            android:contentDescription="Video Calling after receiving the encryption code"
+            android:textColor="#fff"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/lato_bolditalic"
+            android:layout_below="@id/btn_send_email"/>
+
+        <TextView
+            android:textColor="@color/colorAccent"
+            android:id="@+id/doctor_busy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Busy with another patient"
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="20sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="32dp"
+            android:visibility="visible"
+            android:layout_below="@id/btn_appointment"/>
+
+
+    </RelativeLayout>
+</ScrollView>

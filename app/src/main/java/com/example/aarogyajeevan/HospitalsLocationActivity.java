@@ -3,10 +3,15 @@ package com.example.aarogyajeevan;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.IntentSender;
+import android.content.pm.PackageManager;
 import android.location.Location;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
@@ -18,10 +23,14 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.example.aarogyajeevan.Model.GetNearbyPlaces;
+import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResolvableApiException;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
@@ -32,7 +41,9 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -55,7 +66,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class HospitalsLocationActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class HospitalsLocationActivity extends AppCompatActivity implements OnMapReadyCallback, LocationListener, GoogleApiClient.ConnectionCallbacks,GoogleApiClient.OnConnectionFailedListener {
 
     private GoogleMap mMap;
     private FusedLocationProviderClient mfusedLocationProviderClient;
@@ -68,10 +79,18 @@ public class HospitalsLocationActivity extends AppCompatActivity implements OnMa
     private Button btnFind;
     private final float DEFAULT_ZOOM=18;
     private RippleBackground rippleBackground;
+    private GoogleApiClient googleApiClient;
+    private static final int request_user_location_code=99;
+    private Double longitude,latitude;
+    private int proximityRadius=10000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hospitals_location);
+
+        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
+            checkUserLocationPermission();
+        }
 
         materialSearchBar=findViewById(R.id.searchBar);
         btnFind=findViewById(R.id.btnFind);
@@ -198,18 +217,35 @@ public class HospitalsLocationActivity extends AppCompatActivity implements OnMa
         btnFind.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String hospital="hospital";
+                Object transferData[]=new Object[2];
+                String url;
+                GetNearbyPlaces getNearbyPlaces=new GetNearbyPlaces();
                 LatLng currentLocation= mMap.getCameraPosition().target;
                 rippleBackground.startRippleAnimation();
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        rippleBackground.stopRippleAnimation();
-                    }
-                },3000);
+                url=getUrl(latitude,longitude,hospital);
+                transferData[0]=mMap;
+                transferData[1]=url;
+                getNearbyPlaces.execute(transferData);
+                Toast.makeText(HospitalsLocationActivity.this, "Searching for nearby hospitals...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(HospitalsLocationActivity.this, "Showing nearby hospitals...", Toast.LENGTH_SHORT).show();
+                rippleBackground.stopRippleAnimation();
             }
         });
     }
 
+    private String getUrl(Double latitude, Double longitude, String nearbyPlace) {
+        StringBuilder googleUrl=new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
+        googleUrl.append("location="+latitude+","+longitude);
+        googleUrl.append("&radius="+proximityRadius);
+        googleUrl.append("&type="+nearbyPlace);
+        googleUrl.append("&sensor=true");
+        googleUrl.append("&key="+"AIzaSyAMe3vpf-_nyTlvxTqk6HOBlWRxTHN5JNI");
+//        googleUrl.append("&key="+"AIzaSyCY-0IHL4TrlFssayHkUn-3tCs4XN9TNRw");
+        Log.d("LocationDetection","url="+googleUrl.toString());
+        return googleUrl.toString();
+
+    }
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap=googleMap;
@@ -308,5 +344,84 @@ public class HospitalsLocationActivity extends AppCompatActivity implements OnMa
             }
         });
     }
+
+    @Override
+    public void onLocationChanged(Location location) {
+
+        latitude=location.getLatitude();
+        longitude=location.getLongitude();
+//        lastLocation=location;
+//        if (currentUserLocation!=null){
+//            currentUserLocation.remove();
+//        }
+//        LatLng latLng=new LatLng(location.getLatitude(),location.getLongitude());
+//        MarkerOptions markerOptions=new MarkerOptions();
+//        markerOptions.position(latLng);
+//        markerOptions.title("User Current Position");
+//        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+//        currentUserLocation=mMap.addMarker(markerOptions);
+//        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,12));
+        if (googleApiClient!=null){
+            LocationServices.FusedLocationApi.removeLocationUpdates(googleApiClient,this);
+
+        }
+
+    }
+
+    @Override
+    public void onConnected(@Nullable Bundle bundle) {
+
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
+    }
+
+    public boolean checkUserLocationPermission(){
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)!= PackageManager.PERMISSION_GRANTED){
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.ACCESS_FINE_LOCATION)){
+                ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},request_user_location_code);
+            }
+            else {
+                ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},request_user_location_code);
+            }
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode){
+            case request_user_location_code:
+                if (grantResults.length>0&& grantResults[0]==PackageManager.PERMISSION_GRANTED){
+                    if (ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION)==PackageManager.PERMISSION_GRANTED){
+                        if (googleApiClient==null){
+                            buildGoogleApiClient();
+                        }
+                        mMap.setMyLocationEnabled(true);
+                    }
+                }
+                else {
+                    Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show();
+                }
+                return;
+        }
+    }
+
+    protected synchronized void buildGoogleApiClient(){
+        googleApiClient=new GoogleApiClient.Builder(this).addConnectionCallbacks(this).addOnConnectionFailedListener(this).addApi(LocationServices.API).build();
+        googleApiClient.connect();
+    }
+
+
 }
 

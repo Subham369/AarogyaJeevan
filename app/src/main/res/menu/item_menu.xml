@@ -6,20 +6,14 @@
         android:title="Faq"
         android:icon="@drawable/ic_help_outline"
         app:showAsAction="always"
+        android:contentDescription="FAQ"
         />
-    <item
-        android:id="@+id/add"
-        android:title="Add"
-        app:showAsAction="never"
-        android:visible="true"/>
 
-    <item
-        android:id="@+id/help"
-        android:title="Helpline"
-        app:showAsAction="never"/>
 
     <item
         android:id="@+id/logout"
         android:title="Logout"
-        app:showAsAction="never"/>
+        android:icon="@drawable/ic_exit"
+        app:showAsAction="always"
+        android:contentDescription="Log out"/>
 </menu>

@@ -72,7 +72,7 @@
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/dashboard_logo" />
+                        android:src="@drawable/healthcare" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -80,7 +80,7 @@
                         android:layout_gravity="center"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
-                        android:text="COVID 19 DASHBOARD"
+                        android:text="HEALTH DASHBOARD"
                         android:fontFamily="@font/lato_bolditalic"
                         android:textColor="#fff"
                         android:textSize="18sp"
@@ -371,7 +371,7 @@
                                     android:layout_height="wrap_content"
                                     android:textColor="#000"
                                     android:textStyle="bold"
-                                    android:text="LABS FOR COVID-19"
+                                    android:text="LABS"
                                     android:fontFamily="@font/lato_bold"
                                     android:textSize="10sp"
                                     android:textAlignment="center"
@@ -572,7 +572,7 @@
                                     android:textColor="#000"
                                     android:textStyle="bold"
                                     android:textAllCaps="true"
-                                    android:text="COVID-19 Community"
+                                    android:text="Community"
                                     android:fontFamily="@font/lato_bold"
                                     android:textSize="10sp"
                                     android:textAlignment="center"
@@ -845,6 +845,56 @@
                                     android:layout_marginBottom="0dp"
                                     android:background="@android:color/transparent"
                                     android:onClick="clkEcommerce" />
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            app:cardCornerRadius="10dp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="0dp"
+                            android:gravity="center"
+                            android:layout_marginRight="5dp"
+                            android:orientation="vertical">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#fff">
+                                <ImageView
+                                    android:id="@+id/imgHospitalBooking"
+                                    android:layout_width="70dp"
+                                    android:layout_height="40dp"
+                                    android:src="@drawable/hospitalbooking"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_centerHorizontal="true"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#000"
+                                    android:textStyle="bold"
+                                    android:text="Hospital Booking"
+                                    android:fontFamily="@font/lato_bold"
+                                    android:textAllCaps="true"
+                                    android:textSize="10sp"
+                                    android:textAlignment="center"
+                                    android:layout_below="@id/imgHospitalBooking"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginTop="7dp"/>
+
+                                <Button
+                                    android:id="@+id/btnHospitalBooking"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_marginEnd="0dp"
+                                    android:layout_marginBottom="0dp"
+                                    android:background="@android:color/transparent"
+                                    android:onClick="clkHospitalBook" />
                             </RelativeLayout>
 
                         </androidx.cardview.widget.CardView>

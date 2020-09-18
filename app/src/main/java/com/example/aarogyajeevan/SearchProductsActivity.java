@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.aarogyajeevan.Model.Products;
-import com.example.aarogyajeevan.ViewHolder.ProductViewHolder;
+import com.example.aarogyajeevan.ViewHolderCollection.ProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;

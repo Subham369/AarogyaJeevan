@@ -152,10 +152,15 @@ public class TransportPassActivity extends AppCompatActivity {
     private void spinner_value_add() {
         ArrayList<String> district_name = new ArrayList<>();
         district_name.add("Please Select");
-        district_name.add("EAST DISTRICT");
-        district_name.add("NORTH DISTRICT");
-        district_name.add("SOUTH DISTRICT");
-        district_name.add("WEST DISTRICT");
+        district_name.add("Odisha");
+        district_name.add("West Bengal");
+        district_name.add("Tamil Nadu");
+        district_name.add("Delhi");
+        district_name.add("Punjab");
+        district_name.add("Kerela");
+        district_name.add("Jammu and Kashmir");
+        district_name.add("Ladakh");
+        district_name.add("Rajasthan");
         ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item,district_name);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         spinner_district.setAdapter(arrayAdapter);
@@ -470,8 +475,8 @@ public class TransportPassActivity extends AppCompatActivity {
         hashMap_transportation.put("trans_todate",utodate);
         hashMap_transportation.put("trans_progress",progress);
 
-        if (district.equals("EAST DISTRICT")){
-            databaseReference= FirebaseDatabase.getInstance().getReference("EastDistrict").child(transportation_Uid);
+        if (district.equals("Odisha")){
+            databaseReference= FirebaseDatabase.getInstance().getReference("Odisha").child(transportation_Uid);
             databaseReference.setValue(hashMap_transportation).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
@@ -488,7 +493,7 @@ public class TransportPassActivity extends AppCompatActivity {
                 }
             });
 
-            databaseReferenceProgress= FirebaseDatabase.getInstance().getReference("EastDistrictProgress").child(transportation_Uid);
+            databaseReferenceProgress= FirebaseDatabase.getInstance().getReference("OdishaProgress").child(transportation_Uid);
             databaseReferenceProgress.setValue(hashMap_transportation).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
@@ -508,8 +513,8 @@ public class TransportPassActivity extends AppCompatActivity {
             });
         }
 
-        if (district.equals("NORTH DISTRICT")){
-            databaseReference= FirebaseDatabase.getInstance().getReference("NorthDistrict").child(transportation_Uid);
+        if (district.equals("West Bengal")){
+            databaseReference= FirebaseDatabase.getInstance().getReference("WestBengal").child(transportation_Uid);
             databaseReference.setValue(hashMap_transportation).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
@@ -526,7 +531,7 @@ public class TransportPassActivity extends AppCompatActivity {
                 }
             });
 
-            databaseReferenceProgress= FirebaseDatabase.getInstance().getReference("NorthDistrictProgress").child(transportation_Uid);
+            databaseReferenceProgress= FirebaseDatabase.getInstance().getReference("WestBengalProgress").child(transportation_Uid);
             databaseReferenceProgress.setValue(hashMap_transportation).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
@@ -546,8 +551,8 @@ public class TransportPassActivity extends AppCompatActivity {
             });
         }
 
-        if (district.equals("SOUTH DISTRICT")){
-            databaseReference= FirebaseDatabase.getInstance().getReference("SouthDistrict").child(transportation_Uid);
+        if (district.equals("Tamil Nadu")){
+            databaseReference= FirebaseDatabase.getInstance().getReference("TamilNadu").child(transportation_Uid);
             databaseReference.setValue(hashMap_transportation).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
@@ -564,7 +569,7 @@ public class TransportPassActivity extends AppCompatActivity {
                 }
             });
 
-            databaseReferenceProgress= FirebaseDatabase.getInstance().getReference("SouthDistrictProgress").child(transportation_Uid);
+            databaseReferenceProgress= FirebaseDatabase.getInstance().getReference("TamilNaduProgress").child(transportation_Uid);
             databaseReferenceProgress.setValue(hashMap_transportation).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
@@ -584,8 +589,8 @@ public class TransportPassActivity extends AppCompatActivity {
             });
         }
 
-        if (district.equals("WEST DISTRICT")){
-            databaseReference= FirebaseDatabase.getInstance().getReference("WestDistrict").child(transportation_Uid);
+        if (district.equals("Delhi")){
+            databaseReference= FirebaseDatabase.getInstance().getReference("Delhi").child(transportation_Uid);
             databaseReference.setValue(hashMap_transportation).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
@@ -602,7 +607,7 @@ public class TransportPassActivity extends AppCompatActivity {
                 }
             });
 
-            databaseReferenceProgress= FirebaseDatabase.getInstance().getReference("WestDistrictProgress").child(transportation_Uid);
+            databaseReferenceProgress= FirebaseDatabase.getInstance().getReference("DelhiProgress").child(transportation_Uid);
             databaseReferenceProgress.setValue(hashMap_transportation).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
@@ -621,5 +626,197 @@ public class TransportPassActivity extends AppCompatActivity {
                 }
             });
         }
+
+        if (district.equals("Punjab")){
+            databaseReference= FirebaseDatabase.getInstance().getReference("Punjab").child(transportation_Uid);
+            databaseReference.setValue(hashMap_transportation).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()){
+                        Toast.makeText(TransportPassActivity.this, "Data saved successfully...", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                        Toast.makeText(TransportPassActivity.this, "Error in saving data in the database please try again...", Toast.LENGTH_SHORT).show();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(TransportPassActivity.this, "Error while saving:"+e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            databaseReferenceProgress= FirebaseDatabase.getInstance().getReference("PunjabProgress").child(transportation_Uid);
+            databaseReferenceProgress.setValue(hashMap_transportation).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()){
+                        Toast.makeText(TransportPassActivity.this, "Permission in progress...", Toast.LENGTH_SHORT).show();
+                        Intent intent=new Intent(TransportPassActivity.this,ResultPermissionActivity.class);
+                        startActivity(intent);
+                    }
+                    else
+                        Toast.makeText(TransportPassActivity.this, "Error in storing permission progress", Toast.LENGTH_SHORT).show();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(TransportPassActivity.this, "Error while saving:"+e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+
+
+        if (district.equals("KerelaActivity")){
+            databaseReference= FirebaseDatabase.getInstance().getReference("KerelaActivity").child(transportation_Uid);
+            databaseReference.setValue(hashMap_transportation).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()){
+                        Toast.makeText(TransportPassActivity.this, "Data saved successfully...", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                        Toast.makeText(TransportPassActivity.this, "Error in saving data in the database please try again...", Toast.LENGTH_SHORT).show();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(TransportPassActivity.this, "Error while saving:"+e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            databaseReferenceProgress= FirebaseDatabase.getInstance().getReference("KerelaProgress").child(transportation_Uid);
+            databaseReferenceProgress.setValue(hashMap_transportation).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()){
+                        Toast.makeText(TransportPassActivity.this, "Permission in progress...", Toast.LENGTH_SHORT).show();
+                        Intent intent=new Intent(TransportPassActivity.this,ResultPermissionActivity.class);
+                        startActivity(intent);
+                    }
+                    else
+                        Toast.makeText(TransportPassActivity.this, "Error in storing permission progress", Toast.LENGTH_SHORT).show();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(TransportPassActivity.this, "Error while saving:"+e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+
+        if (district.equals("Jammu and Kashmir")){
+            databaseReference= FirebaseDatabase.getInstance().getReference("JammuKashmir").child(transportation_Uid);
+            databaseReference.setValue(hashMap_transportation).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()){
+                        Toast.makeText(TransportPassActivity.this, "Data saved successfully...", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                        Toast.makeText(TransportPassActivity.this, "Error in saving data in the database please try again...", Toast.LENGTH_SHORT).show();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(TransportPassActivity.this, "Error while saving:"+e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            databaseReferenceProgress= FirebaseDatabase.getInstance().getReference("JammuKashmirProgress").child(transportation_Uid);
+            databaseReferenceProgress.setValue(hashMap_transportation).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()){
+                        Toast.makeText(TransportPassActivity.this, "Permission in progress...", Toast.LENGTH_SHORT).show();
+                        Intent intent=new Intent(TransportPassActivity.this,ResultPermissionActivity.class);
+                        startActivity(intent);
+                    }
+                    else
+                        Toast.makeText(TransportPassActivity.this, "Error in storing permission progress", Toast.LENGTH_SHORT).show();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(TransportPassActivity.this, "Error while saving:"+e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+
+        if (district.equals("LadakhActivity")){
+            databaseReference= FirebaseDatabase.getInstance().getReference("LadakhActivity").child(transportation_Uid);
+            databaseReference.setValue(hashMap_transportation).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()){
+                        Toast.makeText(TransportPassActivity.this, "Data saved successfully...", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                        Toast.makeText(TransportPassActivity.this, "Error in saving data in the database please try again...", Toast.LENGTH_SHORT).show();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(TransportPassActivity.this, "Error while saving:"+e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            databaseReferenceProgress= FirebaseDatabase.getInstance().getReference("LadakhProgress").child(transportation_Uid);
+            databaseReferenceProgress.setValue(hashMap_transportation).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()){
+                        Toast.makeText(TransportPassActivity.this, "Permission in progress...", Toast.LENGTH_SHORT).show();
+                        Intent intent=new Intent(TransportPassActivity.this,ResultPermissionActivity.class);
+                        startActivity(intent);
+                    }
+                    else
+                        Toast.makeText(TransportPassActivity.this, "Error in storing permission progress", Toast.LENGTH_SHORT).show();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(TransportPassActivity.this, "Error while saving:"+e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+
+        if (district.equals("Rajasthan")){
+            databaseReference= FirebaseDatabase.getInstance().getReference("Rajasthan").child(transportation_Uid);
+            databaseReference.setValue(hashMap_transportation).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()){
+                        Toast.makeText(TransportPassActivity.this, "Data saved successfully...", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                        Toast.makeText(TransportPassActivity.this, "Error in saving data in the database please try again...", Toast.LENGTH_SHORT).show();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(TransportPassActivity.this, "Error while saving:"+e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            databaseReferenceProgress= FirebaseDatabase.getInstance().getReference("RajasthanProgress").child(transportation_Uid);
+            databaseReferenceProgress.setValue(hashMap_transportation).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()){
+                        Toast.makeText(TransportPassActivity.this, "Permission in progress...", Toast.LENGTH_SHORT).show();
+                        Intent intent=new Intent(TransportPassActivity.this,ResultPermissionActivity.class);
+                        startActivity(intent);
+                    }
+                    else
+                        Toast.makeText(TransportPassActivity.this, "Error in storing permission progress", Toast.LENGTH_SHORT).show();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(TransportPassActivity.this, "Error while saving:"+e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+
     }
 }

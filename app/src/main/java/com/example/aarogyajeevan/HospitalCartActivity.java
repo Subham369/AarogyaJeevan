@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import com.example.aarogyajeevan.Model.HospitalCart;
 import com.example.aarogyajeevan.Model.PrerelaventHospital;
-import com.example.aarogyajeevan.ViewHolder.HospitalCartViewHolder;
+import com.example.aarogyajeevan.ViewHolderCollection.HospitalCartViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;

@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New Orders"
+            android:text="@string/new_order"
             android:textColor="@android:color/white"
             android:textSize="25dp"
             android:textAlignment="center"

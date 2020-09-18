@@ -1,4 +1,4 @@
-package com.example.aarogyajeevan.ViewHolder;
+package com.example.aarogyajeevan.ViewHolderCollection;
 
 import android.view.View;
 import android.widget.TextView;
@@ -8,13 +8,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.aarogyajeevan.ItemClickListner;
 import com.example.aarogyajeevan.R;
 
-public class CartViewHolder  extends RecyclerView.ViewHolder implements View.OnClickListener
+public class HospitalCartViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
 {
     public TextView txtProductName, txtProductPrice, txtProductQuantity;
     private ItemClickListner itemClickListner;
 
 
-    public CartViewHolder(View itemView)
+    public HospitalCartViewHolder(View itemView)
     {
         super(itemView);
 

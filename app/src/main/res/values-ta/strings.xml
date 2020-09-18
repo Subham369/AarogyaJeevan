@@ -1,0 +1,185 @@
+<resources>
+    <string name="app_name">Aarogya Jeevan</string>
+    <string name="title_activity_labor_location">Map</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_geofencing">வரைபடம்</string>
+    <string name="what_s_on_your_mind">உங்கள் வினவலை உள்ளிடவும்</string>
+
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">வழிசெலுத்தல் அலமாரியைத் திறக்கவும்</string>
+    <string name="navigation_drawer_close">வழிசெலுத்தல் டிராவை மூடு</string>
+    <string name="nav_header_title">Android ஸ்டுடியோ</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">வழிசெலுத்தல் தலைப்பு</string>
+    <string name="action_settings">அமைப்புகள்</string>
+
+    <string name="menu_home">வீடு</string>
+    <string name="menu_gallery">கேலரி</string>
+    <string name="menu_slideshow">ஸ்லைடுஷோ</string>
+    <string name="title_activity_my_home">MyHomeActivity</string>
+    <string name="title_activity_analysis">வரைபடம்</string>
+
+    <string name="label_settings">அமைப்புகள்</string>
+
+    <string name="msg_welcome_message">திறந்த வீடியோ அழைப்புக்கு வருக</string>
+
+    <string name="label_channel_name_hint">சேனல் பெயர்</string>
+
+    <string name="label_encryption_key_hint">குறியாக்க விசை</string>
+
+    <string name="label_join">சேர</string>
+
+    <string name="label_do_network_test">உங்கள் பிணையத்தை சோதிக்கவும்</string>
+
+    <string name="label_confirm">உறுதிப்படுத்தவும்</string>
+
+    <string name="label_send">அனுப்புக</string>
+
+    <string name="label_options">விருப்பங்கள்</string>
+    <string name="label_network_testing">சோதனை…</string>
+    <string name="label_network_testing_placeholder">-</string>
+    <string name="label_network_test_result">சோதனை முடிவு</string>
+
+    <string name="label_debug">பிழைத்திருத்தம்</string>
+    <string name="label_quality">தரம்</string>
+    <string name="label_rtt">ஆர்டிடி</string>
+    <string name="label_uplink_packet_loss">அப்லிங்க் பாக்கெட் இழப்பு</string>
+    <string name="label_downlink_packet_loss">டவுன்லிங்க் பாக்கெட் இழப்பு</string>
+
+    <string name="msg_say_something">ஏதாவது கூறுங்கள்…</string>
+
+    <string name="msg_connection_error">இணைப்பு பிழை, பிணைய அமைப்புகளை சரிபார்க்கவும் அல்லது சேனல் பெயர் / அணுகல் டோக்கன் செல்லுபடியாகும் என்பதை உறுதிப்படுத்தவும்</string>
+
+    <string name="label_title_resolution">தீர்மானம்</string>
+    <string name="label_title_frame_rate">பிரேம் வீதம் (fps)</string>
+
+    // DO NOT TRANSLATE
+    <string name="bit_rate_value_with_unit">% d kbps</string>
+    <string name="frame_rate_value_with_unit">%d fps</string>
+
+
+    <string name="action_delete_test">அழி</string>
+    <string name="action_test_something">வேறு ஏதாவது சோதிக்கவும்</string>
+    <string name="no_due_date">உரிய தேதி இல்லை</string>
+    <string name="none">எதுவுமில்லை</string>
+    <string name="select_date">தேதியைத் தேர்ந்தெடுக்கவும்</string>
+    <string name="select_due_date">உரிய தேதியைத் தேர்ந்தெடுக்கவும்</string>
+    <string name="pref_sort_by_key" translatable="false">Sort by</string>
+    <string name="sort_by">மூலம் வரிசைப்படுத்து</string>
+    <string name="due_date">உரிய தேதி</string>
+    <string name="pref_priority_key" translatable="false">Priority</string>
+    <string name="priority">முன்னுரிமை</string>
+    <string name="high">உயர்</string>
+    <string name="low">குறைந்த</string>
+    <string name="medium">நடுத்தர</string>
+    <string name="high_priority">அதி முக்கியத்துவம்</string>
+    <string name="low_priority">குறைந்த முன்னுரிமை</string>
+    <string name="medium_priority">நடுத்தர முன்னுரிமை</string>
+    <string name="completed">நிறைவு</string>
+    <string name="intent_adding_or_editing_key" translatable="false">Adding or editing</string>
+    <string name="intent_todo_key" translatable="false">Todo</string>
+    <string name="add_new_task">புதிய பணியைச் சேர்க்கவும்</string>
+    <string name="edit_task">புதிய பணியைச் சேர்க்கவும்</string>
+    <string name="add_task">பணி சேர்க்கவும்</string>
+    <string name="update_task">பணியைப் புதுப்பிக்கவும்</string>
+    <string name="describe_your_task">உங்கள் பணியை விவரிக்கவும்</string>
+    <string name="description_cannot_be_empty">பணி விளக்கம் காலியாக இருக்க முடியாது.</string>
+
+    <!--for onSaveInstanceState in AddOrEditTodoActivity-->
+    <string name="task_description_key" translatable="false">task description</string>
+    <string name="priority_key" translatable="false">priority</string>
+    <string name="no_due_date_key" translatable="false">no due date</string>
+    <string name="year_key" translatable="false">year</string>
+    <string name="month_key" translatable="false">month</string>
+    <string name="day_key" translatable="false">day</string>
+    <string name="completed_key" translatable="false">completed</string>
+    <string name="add_or_edit_key" translatable="false">add or edit</string>
+    <string name="id_key" translatable="false">id</string>
+
+    <!--for the App Widget-->
+    <string name="complete_or_edit_task">பணியை முடிக்கவா அல்லது திருத்த வேண்டுமா?</string>
+    <string name="task_done">பணி முடிந்தது</string>
+    <string name="cancel">ரத்துசெய்</string>
+    <string name="completion">நிறைவு</string>
+
+    <!--for Notifications-->
+    <string name="main_notification_channel_name" translatable="false">Primary</string>
+    <string name="due_and_overdue_tasks">உரிய மற்றும் தாமதமான பணிகள்</string>
+    <string name="you_have">உங்களிடம் \ u0020 உள்ளது</string>
+    <string name="due_today">today u0020 இன்று</string>
+    <string name="and">, and\u0020</string>
+
+    <!--Additional accessibility contentDescriptions (some just use existing strings above)-->
+    <string name="high_priority_task_red_star">அதிக முன்னுரிமை பணிக்கு சிவப்பு நட்சத்திரம்</string>
+    <string name="medium_priority_task_orange_star">நடுத்தர முன்னுரிமை பணிக்கு ஆரஞ்சு நட்சத்திரம்</string>
+    <string name="low_priority_task_yellow_star">குறைந்த முன்னுரிமை பணிக்கு மஞ்சள் நட்சத்திரம்</string>
+    <string name="completed_task_grey_star">பூர்த்தி செய்யப்பட்ட பணிக்கு சாம்பல் நட்சத்திரம்</string>
+
+    <string name="about_app">இது COVID_19 சூழ்நிலை மற்றும் அத்தியாவசிய சேவைகளில் விழிப்புடன் இருக்க உதவும் ஒரு பயன்பாடாகும். இந்த பயன்பாட்டில் பல அம்சங்கள் உள்ளன \ n1. COVID-19 டிராக்கர் \ n2. இருப்பிட டிராக்கர் \ n3. ஹாட்ஸ்பாட் பகுதி குறிக்கும் \ n4. செய்தி போர்டல் \ n5. தன்னார்வ சமூகம் மற்றும் தொழிலாளர் சமூகம் \ n6. சேவை பாஸ் 7 n7. MSME தயாரிப்புகளை வாங்கவும் \ n8. ஆன்லைன் மருத்துவ ஆலோசனை \ n9. மருத்துவமனை படுக்கை முன்பதிவு </string>
+    <string name="describe">விளக்கம்</string>
+    <string name="name">பெயர்</string>
+    <string name="number">எண்</string>
+    <string name="submit">சமர்ப்பிக்கவும்</string>
+    <string name="new_task">புதிய பணி</string>
+    <string name="planning_hint">நீங்கள் என்ன திட்டமிடுகிறீர்கள்?</string>
+    <string name="select_time">நேரத்தைத் தேர்ந்தெடுக்கவும்</string>
+    <string name="save">சேமி</string>
+    <string name="product_name">பொருளின் பெயர்</string>
+    <string name="product_decription">தயாரிப்பு விளக்கம்</string>
+    <string name="product_price">தயாரிப்பு விலை</string>
+    <string name="add_product">தயாரிப்பு சேர்க்கவும்</string>
+    <string name="add_new_product">புதிய தயாரிப்பு சேர்க்கவும்</string>
+    <string name="maintain_product">தயாரிப்புகளை பராமரிக்கவும்</string>
+    <string name="check_new_orders">புதிய ஆர்டர்களைச் சரிபார்க்கவும்</string>
+    <string name="logout">வெளியேறு</string>
+    <string name="apply_changes">மாற்றங்களைப் பயன்படுத்துங்கள்</string>
+    <string name="delete_this_product">இந்த தயாரிப்பை நீக்கு</string>
+    <string name="new_order">புதிய ஆர்டர்</string>
+    <string name="products">தயாரிப்புகள்</string>
+    <string name="health_dashboard">சுகாதார டாஷ்போர்டு</string>
+    <string name="total_cases">மொத்த வழக்குகள்</string>
+    <string name="recovered">மீட்கப்பட்டது</string>
+    <string name="death">உயிரிழப்புகள்</string>
+    <string name="active_cases">தற்சமயம் பாதிக்கப்பட்டுள்ளவர்கள்</string>
+    <string name="worker_tracker">தொழிலாளி டிராக்கர்</string>
+    <string name="labs">LABS</string>
+    <string name="news_updates">செய்திகள் புதுப்பிப்புகள்</string>
+    <string name="pm_support_fund">PM SUPPORT FUND</string>
+    <string name="symptom">அறிகுறிகள்</string>
+    <string name="community">சமூக</string>
+    <string name="wellness_checker">வெல்னஸ் செக்கர்</string>
+    <string name="hotspot_alarm">ஹாட்ஸ்பாட் அலாரம்</string>
+    <string name="doctor_councelling">டாக்டர் கவுன்சிலிங்</string>
+    <string name="pass_permission">அனுமதி அனுமதி</string>
+    <string name="ecommerce">மின் வணிகம்</string>
+    <string name="hospital_booking">ஹாஸ்பிடல் புக்கிங்</string>
+    <string name="my_address">என் முகவரி</string>
+    <string name="my_language">என் மொழி</string>
+    <string name="my_appcolor">பயன்பாட்டு வண்ணம்</string>
+    <string name="onlinevocation">ஆன்லைன் தொழில்</string>
+    <string name="changepassword">கடவுச்சொல்லை மாற்று</string>
+    <string name="disablescreenlock">திரை பூட்டை முடக்கு</string>
+    <string name="todolist">டோடோ பட்டியல்</string>
+    <string name="abouttheapp">பயன்பாட்டைப் பற்றி</string>
+    <string name="reportproblem">அறிக்கை சிக்கல்</string>
+    <string name="emergencyhelplinenumber">அவசர ஹெல்ப்லைன் எண்</string>
+    <string name="shareappothers">பயன்பாட்டை மற்றவர்களுக்கு பகிரவும்</string>
+    <string name="addnewhelpline">புதிய ஹெல்ப்லைன் எண்ணைச் சேர்க்கவும்</string>
+    <string name="addnewhotspot">புதிய ஹாட்ஸ்பாட்டைச் சேர்க்கவும்</string>
+    <string name="addnewvideo">புதிய வீடியோக்களைச் சேர்க்கவும்</string>
+    <string name="totalprice">மொத்த விலை</string>
+    <string name="next">அடுத்தது</string>
+    <string name="congo">வாழ்த்துக்கள், உங்கள் இறுதி ஆர்டர் வெற்றிகரமாக வைக்கப்பட்டுள்ளது. விரைவில் அது சரிபார்க்கப்படும்.</string>
+    <string name="editdetails">விவரங்களைத் திருத்து</string>
+    <string name="post">அஞ்சல்</string>
+    <string name="welcome">வரவேற்பு</string>
+    <string name="to">க்கு</string>
+    <string name="the">தி</string>
+    <string name="community_ext">சமூக</string>
+    <string name="selectchoice">உங்கள் விருப்பத்தைத் தேர்ந்தெடுக்கவும்:</string>
+    <string name="communityportal">கம்யூனிட்டி போர்ட்டல்</string>
+    <string name="chattingportal">சேட்டிங் போர்டல்</string>
+
+</resources>

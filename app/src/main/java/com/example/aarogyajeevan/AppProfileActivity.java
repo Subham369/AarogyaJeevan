@@ -1,16 +1,15 @@
 package com.example.aarogyajeevan;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.TargetApi;
-import android.app.AlertDialog;
-import android.app.Dialog;
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.graphics.Paint;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
@@ -35,6 +34,8 @@ import com.theartofdev.edmodo.cropper.CropImageView;
 import com.turkialkhateeb.materialcolorpicker.ColorChooserDialog;
 import com.turkialkhateeb.materialcolorpicker.ColorListener;
 
+import java.util.Locale;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 
@@ -52,11 +53,12 @@ public class AppProfileActivity extends AppCompatActivity {
     DatabaseReference reference;
     DatabaseReference rootref;
     FirebaseUser firebaseUser;
-    TextView userinfo_phone_number,userinfo_name,userinfo_email,addHotspot,addHelpline;
+    TextView userinfo_phone_number,userinfo_name,userinfo_email,addHotspot,addHelpline,addVideo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        loadLocal();
 //        app_preferences = PreferenceManager.getDefaultSharedPreferences(this);
 //        appColor = app_preferences.getInt("color", 0);
 //        appTheme = app_preferences.getInt("theme", 0);
@@ -91,16 +93,19 @@ public class AppProfileActivity extends AppCompatActivity {
         image_profile=findViewById(R.id.image_profile);
         addHotspot=findViewById(R.id.addHotspot);
         addHelpline=findViewById(R.id.addHelpline);
+        addVideo=findViewById(R.id.addVideo);
 
         firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
         String userId=firebaseUser.getUid();
         if (userId.equals("bmqeBI1k9AeagChB1ZBzm13rCx02")){
             addHelpline.setVisibility(View.VISIBLE);
             addHotspot.setVisibility(View.VISIBLE);
+            addVideo.setVisibility(View.VISIBLE);
         }
         else{
             addHelpline.setVisibility(View.GONE);
             addHotspot.setVisibility(View.GONE);
+            addVideo.setVisibility(View.GONE);
         }
 
         addHotspot.setOnClickListener(new View.OnClickListener() {
@@ -116,6 +121,13 @@ public class AppProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(),AddActivity.class);
+                startActivity(intent);
+            }
+        });
+        addVideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(),VocationalUploadActivity.class);
                 startActivity(intent);
             }
         });
@@ -233,4 +245,56 @@ public class AppProfileActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void vocationalTraining(View view) {
+        Intent intent=new Intent(AppProfileActivity.this, VocationalVideoActivity.class);
+        startActivity(intent);
+    }
+
+    public void languageChange(View view) {
+        showChangeLanguageDialog();
+    }
+
+    private void showChangeLanguageDialog() {
+        final String[] listItems={"English","हिन्दी","தமிழ்"};
+        AlertDialog.Builder mBuilder=new AlertDialog.Builder(AppProfileActivity.this);
+        mBuilder.setTitle("Choose your Language...");
+        mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+                if (i==0){
+                    setLocate("en");
+                    recreate();
+                }
+
+                else if (i==1){
+                    setLocate("hi");
+                    recreate();
+                }
+                else if (i==2){
+                    setLocate("ta");
+                    recreate();
+                }
+            }
+        });
+        AlertDialog mDialog=mBuilder.create();
+        mDialog.show();
+    }
+
+    private void setLocate(String language) {
+        Locale locale=new Locale(language);
+        Locale.setDefault(locale);
+        Configuration config=new Configuration();
+        config.locale=locale;
+        getBaseContext().getResources().updateConfiguration(config,getBaseContext().getResources().getDisplayMetrics());
+
+        SharedPreferences.Editor editor=getSharedPreferences("Settings",MODE_PRIVATE).edit();
+        editor.putString("My Language",language);
+        editor.apply();
+    }
+
+    public void loadLocal(){
+        SharedPreferences prefs=getSharedPreferences("Settings", Activity.MODE_PRIVATE);
+        String language=prefs.getString("My Language","");
+        setLocate(language);
+    }
 }

@@ -33,7 +33,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddActivity"></activity>
+
+        <activity android:name=".Fullscreen"
+            android:supportsPictureInPicture="true"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/Theme.Design.NoActionBar"/>
+        <activity android:name=".VocationalVideoActivity" />
+        <activity android:name=".VocationalUploadActivity" />
+        <activity android:name=".AddActivity" />
         <activity android:name=".HospitalConfirmFinalOrderActivity" />
         <activity android:name=".AboutAppActivity" />
         <activity

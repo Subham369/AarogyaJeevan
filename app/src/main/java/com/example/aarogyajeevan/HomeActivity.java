@@ -20,7 +20,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.example.aarogyajeevan.Model.Prerelavent;
 import com.example.aarogyajeevan.Model.Products;
-import com.example.aarogyajeevan.ViewHolder.ProductViewHolder;
+import com.example.aarogyajeevan.ViewHolderCollection.ProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -192,7 +192,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(MenuItem item)
     {
-        // Handle navigation view item clicks here.
+        // Handle navigation view itemnews clicks here.
         int id = item.getItemId();
 
         if (id == R.id.nav_cart)

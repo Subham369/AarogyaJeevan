@@ -1,4 +1,4 @@
-package com.example.aarogyajeevan.ViewHolder;
+package com.example.aarogyajeevan.ViewHolderCollection;
 
 import android.view.View;
 import android.widget.ImageView;

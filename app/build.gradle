@@ -116,4 +116,15 @@ dependencies {
     implementation 'com.razorpay:checkout:1.5.12'
 
 
+    implementation 'com.iceteck.silicompressorr:silicompressor:2.2.3'
+    implementation 'com.github.abhidiwakar:AnstronCoreHelper:1.1'
+    implementation 'com.google.android.exoplayer:exoplayer:2.10.8'
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.10.8'
+    implementation 'com.google.android.exoplayer:exoplayer-dash:2.10.8'
+    implementation 'com.google.android.exoplayer:exoplayer-hls:2.10.8'
+    implementation 'com.google.android.exoplayer:exoplayer-smoothstreaming:2.10.8'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.10.8'
+    implementation 'com.googlecode.mp4parser:isoparser:1.1.22'
+
+
 }

@@ -16,7 +16,7 @@
         android:singleLine="true"
         android:drawableLeft="@drawable/ic_search"
         android:background="@drawable/edittextshadow"
-        android:hint="SEARCH"
+        android:hint="@string/action_search"
         android:drawablePadding="20dp"
         android:paddingLeft="10dp"/>
 

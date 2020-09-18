@@ -32,7 +32,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="New Task"
+                    android:text="@string/new_task"
                     android:fontFamily="@font/lato_bolditalic"
                     android:textColor="@color/white"
                     android:textSize="18dp"
@@ -60,7 +60,7 @@
             android:padding="20dp"
             android:textColor="#000"
             android:textColorHint="#555252"
-            android:hint="What are you planning?"/>
+            android:hint="@string/planning_hint"/>
 
 
 
@@ -106,7 +106,7 @@
             android:layout_height="wrap_content"
                 android:textColor="#000"
                 android:textSize="16dp"
-                android:text="Select Time"
+                android:text="@string/select_time"
                 android:layout_alignParentEnd="true"/>
 
 
@@ -189,7 +189,7 @@
             android:fontFamily="@font/lato_bolditalic"
             android:paddingVertical="15dp"
             android:onClick="saveTask"
-            android:text="SAVE"/>
+            android:text="@string/save"/>
 
     </RelativeLayout>
 

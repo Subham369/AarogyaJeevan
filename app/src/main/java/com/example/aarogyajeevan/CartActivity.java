@@ -13,13 +13,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.aarogyajeevan.Model.Cart;
 import com.example.aarogyajeevan.Model.Prerelavent;
-import com.example.aarogyajeevan.ViewHolder.CartViewHolder;
+import com.example.aarogyajeevan.ViewHolderCollection.CartViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;

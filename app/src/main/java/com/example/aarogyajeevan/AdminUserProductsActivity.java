@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.aarogyajeevan.Model.Cart;
-import com.example.aarogyajeevan.ViewHolder.CartViewHolder;
+import com.example.aarogyajeevan.ViewHolderCollection.CartViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;

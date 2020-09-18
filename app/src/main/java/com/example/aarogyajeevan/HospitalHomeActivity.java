@@ -20,7 +20,7 @@ import android.widget.TextView;
 
 import com.example.aarogyajeevan.Model.HospitalProducts;
 import com.example.aarogyajeevan.Model.PrerelaventHospital;
-import com.example.aarogyajeevan.ViewHolder.HospitalProductViewHolder;
+import com.example.aarogyajeevan.ViewHolderCollection.HospitalProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -194,7 +194,7 @@ public class HospitalHomeActivity extends AppCompatActivity implements Navigatio
     @Override
     public boolean onNavigationItemSelected(MenuItem item)
     {
-        // Handle navigation view item clicks here.
+        // Handle navigation view itemnews clicks here.
         int id = item.getItemId();
 
         if (id == R.id.nav_cart)

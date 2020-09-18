@@ -17,9 +17,6 @@ import com.example.aarogyajeevan.Model.Articles;
 import com.example.aarogyajeevan.R;
 import com.squareup.picasso.Picasso;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -36,7 +33,7 @@ public class Adapter_main extends RecyclerView.Adapter<Adapter_main.ViewHolder> 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.itemnews,parent,false);
         return new ViewHolder(view);
     }
 

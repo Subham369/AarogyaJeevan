@@ -1,0 +1,186 @@
+<resources>
+<string name="app_name">Aarogya Jeevan</string>
+<string name="title_activity_labor_location">Map नक्शा</string>
+
+
+<!-- TODO: Remove or change this placeholder text -->
+<string name="hello_blank_fragment">ैलो खाली टुकड़ा</string>
+<string name="title_activity_geofencing"> नक्शा</string>
+<string name="what_s_on_your_mind">अपनी क्वेरी दर्ज करें</string>
+
+<string name="title_activity_home">होम एक्टिविटी</string>
+<string name="navigation_drawer_open">नेविगेशन दराज खोलें</string>
+<string name="navigation_drawer_close">नेविगेशन ड्रॉअर बंद करें</string>
+<string name="nav_header_title">एंड्रॉइड स्टूडियो</string>
+<string name="nav_header_subtitle">android.studio@android.com</string>
+<string name="nav_header_desc">नेविगेशन हेडर</string>
+<string name="action_settings">समायोजन</string>
+
+<string name="menu_home">घर</string>
+<string name="menu_gallery">गेलरी</string>
+<string name="menu_slideshow">लाइड शो</string>
+<string name="title_activity_my_home">MyHomeActivity</string>
+<string name="title_activity_analysis">नक्शा</string>
+
+<string name="label_settings">समायोजन</string>
+
+<string name="msg_welcome_message">वीडियो कॉल खोलने के लिए आपका स्वागत है</string>
+
+<string name="label_channel_name_hint">चैनल का नाम</string>
+
+<string name="label_encryption_key_hint">कूटलेखन कुंजी</string>
+
+<string name="label_join">शामिल हों</string>
+
+<string name="label_do_network_test">अपने नेटवर्क का परीक्षण करें</string>
+
+<string name="label_confirm">पुष्टि करें</string>
+
+<string name="label_send">संदेश</string>
+
+<string name="label_options">विकल्प</string>
+<string name="label_network_testing">परिक्षण...</string>
+<string name="label_network_testing_placeholder">-</string>
+<string name="label_network_test_result">परीक्षा परिणाम</string>
+
+<string name="label_debug">डिबग</string>
+<string name="label_quality">गुणवत्ता</string>
+<string name="label_rtt">RTT</string>
+<string name="label_uplink_packet_loss">Uplink पैकेट नुकसान</string>
+<string name="label_downlink_packet_loss">पैकेट नुकसान</string>
+
+<string name="msg_say_something">तुम कुछ तो बोलो...</string>
+
+<string name="msg_connection_error">Connection error, please check the network settings or make sure channel name/access token are valid कनेक्शन त्रुटि, कृपया नेटवर्क सेटिंग्स जांचें या सुनिश्चित करें कि चैनल का नाम / पहुंच टोकन मान्य है</string>
+
+<string name="label_title_resolution">संकल्प</string>
+<string name="label_title_frame_rate">फ्रेम रेट</string>
+
+// DO NOT TRANSLATE
+<string name="bit_rate_value_with_unit">% d के.पी.एस.</string>
+<string name="frame_rate_value_with_unit">% d एफपीएस</string>
+
+
+<string name="action_delete_test">हटाएं</string>
+<string name="action_test_something">परीक्षण कुछ और</string>
+<string name="no_due_date">कोई नियत तारीख नहीं</string>
+<string name="none">कोई नहीं</string>
+<string name="select_date">तारीख़ चुनें</string>
+<string name="select_due_date">नियत तिथि का चयन करें</string>
+<string name="pref_sort_by_key" translatable="false">Sort by</string>
+<string name="sort_by">इसके अनुसार क्रमबद्ध करें</string>
+<string name="due_date">नियत तारीख</string>
+<string name="pref_priority_key" translatable="false">Priority</string>
+<string name="priority">प्राथमिकता</string>
+<string name="high">उच्च</string>
+<string name="low">कम</string>
+<string name="medium">मध्यम</string>
+<string name="high_priority">उच्च प्राथमिकता</string>
+<string name="low_priority">कम प्राथमिकता</string>
+<string name="medium_priority"> मध्यम प्राथमिकता</string>
+<string name="completed"> पूरा कर लिया है</string>
+<string name="intent_adding_or_editing_key" translatable="false">Adding or editing</string>
+<string name="intent_todo_key" translatable="false">Todo</string>
+<string name="add_new_task"> नया कार्य जोड़ें</string>
+<string name="edit_task">कार्य संपादित करें</string>
+<string name="add_task"> कार्य संपादित करें</string>
+<string name="update_task"> टास्क अपडेट करें</string>
+<string name="describe_your_task"> अपने कार्य का वर्णन करें</string>
+<string name="description_cannot_be_empty"> कार्य विवरण रिक्त नहीं हो सकता.</string>
+
+<!--for onSaveInstanceState in AddOrEditTodoActivity-->
+<string name="task_description_key" translatable="false">task description</string>
+<string name="priority_key" translatable="false">priority</string>
+<string name="no_due_date_key" translatable="false">no due date</string>
+<string name="year_key" translatable="false">year</string>
+<string name="month_key" translatable="false">month</string>
+<string name="day_key" translatable="false">day</string>
+<string name="completed_key" translatable="false">completed</string>
+<string name="add_or_edit_key" translatable="false">add or edit</string>
+<string name="id_key" translatable="false">id</string>
+
+<!--for the App Widget-->
+<string name="complete_or_edit_task"> टास्क को पूरा करें या संपादित करे ?ं</string>
+<string name="task_done"> टास्क हो गया</string>
+<string name="cancel"> रद्द करना </string>
+<string name="completion">समापन</string>
+
+<!--for Notifications-->
+<string name="main_notification_channel_name" translatable="false">Primary</string>
+<string name="due_and_overdue_tasks"> कारण और अतिदेय कार्य</string>
+<string name="you_have">आपके पास \ u0020 है</string>
+<string name="due_today"> \ u0020due आज</string>
+<string name="and">, और \ u0020</string>
+
+<!--Additional accessibility contentDescriptions (some just use existing strings above)-->
+<string name="high_priority_task_red_star">उच्च प्राथमिकता वाले कार्य के लिए लाल तारा</string>
+<string name="medium_priority_task_orange_star">मध्यम प्राथमिकता वाले कार्य के लिए ऑरेंज स्टार</string>
+<string name="low_priority_task_yellow_star">कम प्राथमिकता वाले कार्य के लिए पीला तारा</string>
+<string name="completed_task_grey_star">पूर्ण कार्य के लिए ग्रे स्टार</string>
+
+<string name="about_app">यह एक ऐसा ऐप है जो आपको COVID_19 स्थिति और आवश्यक सेवाओं के बारे में जागरूक रहने में मदद करेगा। इस ऐप में कई फीचर \ n1 हैं। COVID-19 ट्रैकर \ n2। स्थान ट्रैकर \ n3। हॉटस्पॉट क्षेत्र अंकन \ n4। न्यूज़ पोर्टल \ n5 स्वयंसेवक समुदाय और कार्यकर्ता समुदाय \ n6। सेवा पास \ n7। MSME Products \ n8 खरीदें। ऑनलाइन डॉक्टर परामर्श \ n9। अस्पताल के बिस्तर की बुकिंग </string>
+<string name="describe">Description विवरण</string>
+<string name="name">Name नाम</string>
+<string name="number">Number संख्या</string>
+<string name="submit">Submit प्रस्तुत</string>
+<string name="new_task">नया कार्य</string>
+<string name="planning_hint">तुम क्या योजना बना रहे हो?</string>
+<string name="select_time">समय का चयन करें</string>
+<string name="save">सहेजें</string>
+<string name="product_name">उत्पाद का नाम</string>
+<string name="product_decription">उत्पाद वर्णन</string>
+<string name="product_price">उत्पाद की कीमत</string>
+<string name="add_product">उत्पाद जोड़ें</string>
+<string name="add_new_product">नया उत्पाद जोड़ें</string>
+<string name="maintain_product">Maintain Products उत्पाद बनाए रखें</string>
+<string name="check_new_orders">नए आदेशों की जाँच करें</string>
+<string name="logout">लॉग आउट</string>
+<string name="apply_changes">परिवर्तन लागू करें</string>
+<string name="delete_this_product">इस उत्पाद को हटा दें</string>
+<string name="new_order">New Order नया आदेश</string>
+<string name="products">उत्पाद</string>
+<string name="health_dashboard">स्वास्थ्य डैशबोर्ड</string>
+<string name="total_cases">कुल मामले</string>
+<string name="recovered">बरामद</string>
+<string name="death">मौतें</string>
+<string name="active_cases">एक्टिव केस</string>
+<string name="worker_tracker">काम करने वाला व्यापारी</string>
+<string name="labs">लैब</string>
+<string name="news_updates">नए अपडेट</string>
+<string name="pm_support_fund">प्रधानमंत्री ने समर्थन किया</string>
+<string name="symptom">लक्षण</string>
+<string name="community">समुदाय</string>
+<string name="wellness_checker">वेलकम चेकर</string>
+<string name="hotspot_alarm">हॉटस्पॉट अलार्म</string>
+<string name="doctor_councelling">डॉक्टर के परामर्श</string>
+<string name="pass_permission">पास की स्थिति</string>
+<string name="ecommerce">ई-कॉमर्स</string>
+<string name="hospital_booking">अस्पताल बुकिंग</string>
+<string name="my_address">मेरा पता</string>
+<string name="my_language">मेरी भाषा</string>
+<string name="my_appcolor">ऐप का रंग</string>
+<string name="onlinevocation">ऑनलाइन वोकेशन</string>
+<string name="changepassword">पासवर्ड बदलें</string>
+<string name="disablescreenlock">स्क्रीन लॉक को अक्षम करें</string>
+<string name="todolist">करने के लिए सूची</string>
+<string name="abouttheapp">ऐप के बारे में</string>
+<string name="reportproblem">समस्या की सूचना दें</string>
+<string name="emergencyhelplinenumber">आपातकालीन हेल्पलाइन नंबर</string>
+<string name="shareappothers">दूसरों को ऐप शेयर करें</string>
+<string name="addnewhelpline">नया हेल्पलाइन नंबर जोड़ें</string>
+<string name="addnewhotspot">नया हॉटस्पॉट जोड़ें</string>
+<string name="addnewvideo">नए वीडियो जोड़ें</string>
+<string name="totalprice">कुल कीमत</string>
+<string name="next">आगे</string>
+<string name="congo">बधाई हो, आपका अंतिम आदेश सफलतापूर्वक रखा गया है। जल्द ही इसका सत्यापन कराया जाएगा।</string>
+<string name="editdetails">विवरण संपादित करें</string>
+<string name="post">पद</string>
+<string name="welcome">स्वागत हे</string>
+<string name="to">सेवा</string>
+<string name="the">the</string>
+<string name="community_ext">समुदाय</string>
+<string name="selectchoice">कृपया अपनी पसंद चुनें:</string>
+<string name="communityportal">कम्यूनिटी पोर्टल</string>
+<string name="chattingportal">चार्टिंग पोर्टल</string>
+
+</resources>

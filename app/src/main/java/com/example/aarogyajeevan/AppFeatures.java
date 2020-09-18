@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -39,6 +41,8 @@ import org.eazegraph.lib.models.PieModel;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Locale;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class AppFeatures extends AppCompatActivity {
@@ -54,8 +58,8 @@ public class AppFeatures extends AppCompatActivity {
     DatabaseReference reference;
     DatabaseReference rootref;
 
-    SharedPreferences app_preferences;
-    SharedPreferences.Editor editor;
+//    SharedPreferences app_preferences;
+//    SharedPreferences.Editor editor;
     Methods methods;
     int appColor;
     int appTheme;
@@ -64,7 +68,9 @@ public class AppFeatures extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        loadLocal();
         super.onCreate(savedInstanceState);
+
 
 //        app_preferences = PreferenceManager.getDefaultSharedPreferences(this);
 //        appColor = app_preferences.getInt("color", 0);
@@ -315,5 +321,23 @@ public class AppFeatures extends AppCompatActivity {
     public void clkHospitalBook(View view) {
         Intent intent=new Intent(AppFeatures.this,HospitalBookingActivity.class);
         startActivity(intent);
+    }
+
+    private void setLocate(String language) {
+        Locale locale=new Locale(language);
+        Locale.setDefault(locale);
+        Configuration config=new Configuration();
+        config.locale=locale;
+        getBaseContext().getResources().updateConfiguration(config,getBaseContext().getResources().getDisplayMetrics());
+
+        SharedPreferences.Editor editor=getSharedPreferences("Settings",MODE_PRIVATE).edit();
+        editor.putString("My Language",language);
+        editor.apply();
+    }
+
+    public void loadLocal(){
+        SharedPreferences prefs=getSharedPreferences("Settings", Activity.MODE_PRIVATE);
+        String language=prefs.getString("My Language","");
+        setLocate(language);
     }
 }
